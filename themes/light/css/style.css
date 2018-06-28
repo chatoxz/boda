@@ -1,0 +1,325 @@
+@font-face {
+    /*font-family: myFirstFont;
+    src: url(/themes/light/fonts/Dusha_-_FIFA_World_Cup_2018.ttf);*/
+}
+
+html,
+body {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    height: 100%;
+   /* background-image: url(/themes/light/img/fondo01.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
+}
+/*
+.navbar-brand img{
+    float: left;
+    margin: -5px 20px;
+    height: 40px;
+}
+
+.nav_sin_log .navbar-brand{
+    padding-top: 14px !important;
+    width: 290px;
+}
+.nav_sin_log .navbar-brand img{
+    margin-top: -8px; !important;
+}
+*/
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    text-align: center !important;
+    padding: 70px 15px 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    border: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.footer {
+    height: 60px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\e151";
+}
+
+a.desc:after {
+    content: "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.grid-view td:last-child {
+    width: 68px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* add red asterisk to required form fields */
+div.required label:after {
+    content: " *";
+    color: #e13431;
+}
+
+/*-- Css for nicer display of boolean yes/no values --*/
+
+.boolean-true {
+    font-weight: bold;
+    color: green;
+}
+
+.boolean-false {
+    font-weight: bold;
+    color: #e13431;
+}
+
+/*-- Css for nicer display of user roles --*/
+
+.role-theCreator {
+    font-weight: bold;
+    color: black;
+}
+
+.role-admin {
+    font-weight: bold;
+    color: #c4a500;
+}
+
+.role-employee {
+    font-weight: bold;
+    color: #800080;
+}
+
+.role-premium {
+    font-weight: bold;
+    color: #009d00;
+}
+
+.role-member {
+    font-weight: bold;
+    color: #4c4cff;
+}
+
+/*-- Password strength --*/
+
+/* Ajust the size so it fits nicely */
+.kv-meter-container {
+    width: 105px;
+}
+/* CSS AGREGADO PARA PAGINA BODA  CSS AGREGADO PARA PAGINA BODA  CSS AGREGADO PARA PAGINA BODA  CSS AGREGADO PARA PAGINA BODA*/
+.container{
+    margin-bottom: 50px !important;
+}
+
+.wrap_first_img{
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    margin: -15px;
+    margin-bottom: 30px;
+}
+.first_img{
+    width: auto;
+    height: auto;
+    background-position: center;
+    vertical-align: middle;
+}
+
+.titulo_1{
+    display: block;
+    margin: auto;
+    font-size: 48px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-align: center;
+}
+.texto_1{
+    font-size: 30px;
+    text-align: center;
+}
+.btn-como-llegar{
+    border-radius: 50px !important;
+    font-size: 26px;
+}
+.countdown{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.number-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*
+
+.boton_posiciones{
+    margin: auto;
+    color: #FFFFFF;
+    background-color: #4CAF50;
+    border: none;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 18px;
+    width: 20%;
+    font-family: myFirstFont;
+}
+
+.boton_posiciones:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.nav_white_opacity{
+    background-color: white;
+    opacity: 0.95;
+    font-size: 16px;
+    font-family: myFirstFont;
+}
+.just_white{
+    background-color: white;
+    /*overflow-x: scroll;*/
+    /*font-family: myFirstFont !important;
+}
+.white_opacity, .white_opacity_not_animation{
+    background-color: white;
+    opacity: 0.95;
+    overflow-x: scroll;
+    font-family: myFirstFont !important;
+}
+.white_opacity:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0),0 6px 20px 0 rgba(0,0,0,1.0);
+    opacity: 1.0;
+}
+*/
+
+/*elimina las flechas del input number*/
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    /*-webkit-appearance: none !important;
+    margin: 0 !important; /* <-- Apparently some margin are still there even though it's hidden */
+/*
+}
+
+input[type='number'] {
+    -moz-appearance:textfield !important;
+    padding: 0px !important;
+    text-align: center !important;
+}
+
+@media (max-width: 925px) {
+
+}
+@media screen and (max-width: 991px) {
+
+}
+@media screen and (max-width: 600px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+
+
+/*@media (max-width: 768px){
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1  {
+        width: 100%;
+        *width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 14.285714285714285714285714285714%;
+        *width: 14.285714285714285714285714285714%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 14.285714285714285714285714285714%;
+        *width: 14.285714285714285714285714285714%;
+    }
+}*/
