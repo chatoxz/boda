@@ -210,17 +210,46 @@ div.required label:after {
 }
 .btn-como-llegar{
     border-radius: 50px !important;
-    font-size: 26px;
+    font-size: 20px !important;
+    background: none !important;
+    border-color: #551f81 !important;
+    color: #551f81 !important;
+    border-width: 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 50px !important;
 }
+.btn-como-llegar:hover {
+    box-shadow: 0 0 0 3px rgba(85, 31, 129, 0.25) !important;
+}
+
+.btn-como-llegar:hover,.btn-como-llegar  a:hover,.btn-como-llegar  a:focus{
+    color: #ffffff !important;
+    background-color: #551f81 !important;
+    border-color: #551f81 !important;
+    outline: 0 !important;
+}
+
 .countdown{
     max-width: 700px;
     margin: 0 auto;
+    font-size: 26px;
 }
 .number-wrap{
     display: flex;
     flex-direction: column;
 }
-
+.wrap_bloque_fotos_padrinx{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.wrap_fotos_padrinx{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
 
 /*

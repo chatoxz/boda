@@ -5,7 +5,7 @@ $this->title = Yii::t('app', Yii::$app->name);
 ?>
 <div class="site-index">
     <div class="wrap_first_img" >
-        <img  class="first_img" src="/themes/light/img/silvia_juan.jpg" width="100%" alt="">
+        <img  class="first_img" src="/themes/light/img/chato_lou2.jpg" width="100%" alt="">
     </div>
     <div class="container" >
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,9 +55,7 @@ $this->title = Yii::t('app', Yii::$app->name);
             <p class="texto_1">
                 La Ceremonia se realizará en la "Parroquia Sta Rosa de Lima", a las 20:00 hs, el Sábado 10 de febrero de 2018.
             </p>
-            <div class="btn btn-default btn-como-llegar" >
-                <a href="https://goo.gl/maps/GLTXvvak7N72" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
-            </div>
+            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
         </div>
     </div>
 
@@ -70,13 +68,130 @@ $this->title = Yii::t('app', Yii::$app->name);
             </p>
             <p class="texto_1">
                 <img src="/themes/light/img/dress-code.png" alt="" width="100">
-                Dresscode: formal
+                Dresscode: Formal
             </p>
-            <div class="btn btn-default btn-como-llegar" >
-                <a href="https://goo.gl/maps/1dW43Zt1Zem" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
+            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/1dW43Zt1Zem" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
+        </div>
+    </div>
+    <div style="padding: 60px 0px;background-color: rgb(239, 239, 239)">
+        <div class="container" style="text-align: center">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="titulo_1">Padrinos y Madrinas</div>
+                <div class="titulo_1">De la Novia</div>
+                <div class="wrap_bloque_fotos_padrinx">
+                    <div class="wrap_sub_bloque_fotos_padrinx">
+                        <div class="titulo_1">Iglesia</div>
+                        <div class="wrap_fotos_padrinx">
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Victor</div>
+                                <div class="texto_1">Papá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap_sub_bloque_fotos_padrinx">
+                        <div class="titulo_1">Civil</div>
+                        <div class="wrap_fotos_padrinx">
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Victor</div>
+                                <div class="texto_1">Papá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="text-align: center">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="titulo_1">Del Novio</div>
+                <div class="wrap_bloque_fotos_padrinx">
+                    <div class="wrap_sub_bloque_fotos_padrinx">
+                        <div class="titulo_1">Iglesia</div>
+                        <div class="wrap_fotos_padrinx">
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Victor</div>
+                                <div class="texto_1">Papá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap_sub_bloque_fotos_padrinx">
+                        <div class="titulo_1">Civil</div>
+                        <div class="wrap_fotos_padrinx">
+                            <div class="detalle_foto_padrinx">
+                                <div><img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt=""></div>
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Victor</div>
+                                <div class="texto_1">Papá</div>
+                            </div>
+                            <div class="detalle_foto_padrinx">
+                                <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
+                                <div class="texto_1">Elvira</div>
+                                <div class="texto_1">Mamá</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container" style="text-align: center;padding: 60px 0px">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <img src="/themes/light/img/regalos.png" alt="" width="550">
+            <div class="titulo_1">¿Pensaste en regalos?</div>
+            <p class="texto_1">
+                Realmente somos afortunados y no necesitamos nada. Pero... nos podes ayudar con nuestra Luna de Miel
+            </p>
+            <a class="btn btn-default btn-como-llegar" href="regalos" target="_blank"><span class="glyphicon glyphicon-bitcoin"></span>Regalar!</a>
+        </div>
+    </div>
+
+    <div class="container" style="text-align: center;padding: 60px 0px;background-color: rgb(239, 239, 239)">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <img src="/themes/light/img/confirmar.png" alt="" width="550">
+            <p class="texto_1">
+                ¡Te esperamos para compartir!
+            </p>
+            <a class="btn btn-default btn-como-llegar modalButton" title="Confirmar presencia" value="confirmar" size="" target="_blank"><span class="glyphicon glyphicon-star"></span>Confirmar asistencia</a>
+        </div>
+    </div>
+
     <!--<div class="jumbotron">
         <h1>Congratulations!</h1>
 
