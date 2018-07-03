@@ -9,12 +9,18 @@ $this->title = Yii::t('app', Yii::$app->name);
     </div>
     <div class="container" >
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="titulo_1">Chato & Lou</div>
-            <div class="titulo_1">Nos Casamos</div>
+            <div class="titulo_principal">
+                <span style="margin-bottom: -15px"> Chato </span>
+                <span class="texto_intermedio_tit_ppal">SE CASAMO VIEJX DEL AGUA</span>
+                <span style="margin-top: -26px"> +Lou</span>
+            </div>
+            <p class="titulo_1">
+                Capitulo x
+            </p>
             <p class="texto_1">
-                Porque desde la primera vez que nos vimos soñamos
-                con este momento, queremos que formes parte de nuestra
-                mágica historia que abrirá un nuevo capítulo...
+                Wedding.  El lado oscuro y lo otro, se quieren da vuelta como media en el casorio de la Lou y el Chato.
+
+
             </p>
         </div>
     </div>
@@ -50,10 +56,10 @@ $this->title = Yii::t('app', Yii::$app->name);
 
     <div class="container" style="text-align: center">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <img src="/themes/light/img/anillos.png" alt="" width="550">
+            <img src="/themes/light/img/new_order_jedi.png" alt="" width="150">
             <div class="titulo_1">Ceremonia Religiosa</div>
             <p class="texto_1">
-                La Ceremonia se realizará en la "Parroquia Sta Rosa de Lima", a las 20:00 hs, el Sábado 10 de febrero de 2018.
+                La Ceremonia, en la iglesia San Maron, se realizara. A las 11:00 hs, el Sabado 18 de agosto debes estar.
             </p>
             <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
         </div>
@@ -61,26 +67,30 @@ $this->title = Yii::t('app', Yii::$app->name);
 
     <div class="container" style="text-align: center">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <img src="/themes/light/img/copas.png" alt="" width="550">
+            <img src="/themes/light/img/separatist.png" alt="" width="150">
             <div class="titulo_1">Fiesta</div>
             <p class="texto_1">
                 Te esperamos luego de la ceremonia religiosa en el salon Los Nogales, en los Nogales.
             </p>
             <p class="texto_1">
-                <img src="/themes/light/img/dress-code.png" alt="" width="100">
+                <img src="/themes/light/img/dresscode.png" alt="" width="100">
                 Dresscode: Formal
             </p>
             <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/1dW43Zt1Zem" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
         </div>
     </div>
-    <div style="padding: 60px 0px;background-color: rgb(239, 239, 239)">
+    <div style="padding: 60px 0px;background-color: rgb(255,255,255)">
         <div class="container" style="text-align: center">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="titulo_1">Padrinos y Madrinas</div>
-                <div class="titulo_1">De la Novia</div>
+                <div class="titulo_1_black">
+                    <img src="/themes/light/img/c3po.png" alt="" width="30" style="padding-bottom: 50px">
+                    Padrinos y Madrinas
+                    <img src="/themes/light/img/r2d2.png" alt="" width="30" style="padding-bottom: 50px">
+                </div>
+                <div class="titulo_1_black">De la Novia</div>
                 <div class="wrap_bloque_fotos_padrinx">
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1">Iglesia</div>
+                        <div class="titulo_1_black">Iglesia</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
@@ -100,7 +110,7 @@ $this->title = Yii::t('app', Yii::$app->name);
                         </div>
                     </div>
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1">Civil</div>
+                        <div class="titulo_1_black">Civil</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt="">
@@ -125,10 +135,10 @@ $this->title = Yii::t('app', Yii::$app->name);
 
         <div class="container" style="text-align: center">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="titulo_1">Del Novio</div>
+                <div class="titulo_1_black">Del Novio</div>
                 <div class="wrap_bloque_fotos_padrinx">
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1">Iglesia</div>
+                        <div class="titulo_1_black">Iglesia</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
@@ -148,7 +158,7 @@ $this->title = Yii::t('app', Yii::$app->name);
                         </div>
                     </div>
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1">Civil</div>
+                        <div class="titulo_1_black">Civil</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <div><img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt=""></div>
@@ -178,7 +188,9 @@ $this->title = Yii::t('app', Yii::$app->name);
             <p class="texto_1">
                 Realmente somos afortunados y no necesitamos nada. Pero... nos podes ayudar con nuestra Luna de Miel
             </p>
-            <a class="btn btn-default btn-como-llegar" href="regalos" target="_blank"><span class="glyphicon glyphicon-bitcoin"></span>Regalar!</a>
+            <a class="btn btn-default btn-como-llegar" href="regalos" target="_blank">
+                <img src="/themes/light/img/credito2.png" alt="" width="50">
+                Regalar!</a>
         </div>
     </div>
 

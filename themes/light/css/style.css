@@ -1,6 +1,30 @@
 @font-face {
-    /*font-family: myFirstFont;
-    src: url(/themes/light/fonts/Dusha_-_FIFA_World_Cup_2018.ttf);*/
+    /*font-family: textofont;*/
+    font-family: tituloPrincipalFont;
+    src: url(/themes/light/fonts/starwars/Starjhol.ttf);
+}
+@font-face {
+    /*font-family: textofont;*/
+    font-family: titulofont;
+    src: url(/themes/light/fonts/starwars/death_star.otf);
+}
+@font-face {
+    /*font-family: textofont;*/
+    font-family: textoIntermedioTitPpalFont;
+    src: url(/themes/light/fonts/starwars/SerifGothic-Heavy.otf);
+}
+@font-face {
+    font-family: textofont;
+    /*font-family: titulofont;*/
+    /*src: url(/themes/light/fonts/starwars/Stjldbl1.ttf);*/
+    src: url(/themes/light/fonts/starwars/STJEDISE.ttf) ;
+   /* src: url(/themes/light/fonts/starwars/death_star.otf) ;*/
+    /*src: url(/themes/light/fonts/starwars/Star_Jedi_Rounded.TTF) ;*/
+}
+@font-face {
+    /*font-family: textofont;*/
+    font-family: starjedi;
+    src: url(/themes/light/fonts/starwars/Starjedi.ttf);
 }
 
 html,
@@ -8,6 +32,8 @@ body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     height: 100%;
+    background-color: black;
+    color: white;
    /* background-image: url(/themes/light/img/fondo01.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;*/
@@ -186,8 +212,7 @@ div.required label:after {
     display: flex;
     justify-content: center;
     vertical-align: center;
-    margin: -15px;
-    margin-bottom: 30px;
+    margin: 0px -15px;
 }
 .first_img{
     width: auto;
@@ -196,24 +221,46 @@ div.required label:after {
     vertical-align: middle;
 }
 
-.titulo_1{
+.titulo_1, .titulo_principal, .titulo_1_black{
     display: block;
     margin: auto;
     font-size: 48px;
     margin-bottom: 30px;
     max-width: 800px;
     text-align: center;
+    font-family: titulofont !important;
+    color: white;
+}
+.titulo_1_black{
+    color: black;
+}
+.titulo_principal{
+    font-family: tituloPrincipalFont !important;
+    color: yellow;
+    display: flex;
+    flex-direction: column;
+    font-size: 68px;
+
+}
+.texto_intermedio_tit_ppal{
+    font-size: 26px;
+    color: white;
+    font-family: textoIntermedioTitPpalFont !important;
+
 }
 .texto_1{
     font-size: 30px;
     text-align: center;
+    font-family: textofont !important;
+    color: white;
+
 }
 .btn-como-llegar{
     border-radius: 50px !important;
     font-size: 20px !important;
     background: none !important;
-    border-color: #551f81 !important;
-    color: #551f81 !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
     border-width: 2px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -221,13 +268,13 @@ div.required label:after {
     padding: 10px 50px !important;
 }
 .btn-como-llegar:hover {
-    box-shadow: 0 0 0 3px rgba(85, 31, 129, 0.25) !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25) !important;
 }
 
 .btn-como-llegar:hover,.btn-como-llegar  a:hover,.btn-como-llegar  a:focus{
-    color: #ffffff !important;
-    background-color: #551f81 !important;
-    border-color: #551f81 !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
     outline: 0 !important;
 }
 
@@ -235,6 +282,9 @@ div.required label:after {
     max-width: 700px;
     margin: 0 auto;
     font-size: 26px;
+    font-family: starjedi;
+    color: white;
+
 }
 .number-wrap{
     display: flex;
@@ -268,7 +318,7 @@ div.required label:after {
     white-space: nowrap;
     font-size: 18px;
     width: 20%;
-    font-family: myFirstFont;
+    font-family: titulofont;
 }
 
 .boton_posiciones:hover{
@@ -278,18 +328,18 @@ div.required label:after {
     background-color: white;
     opacity: 0.95;
     font-size: 16px;
-    font-family: myFirstFont;
+    font-family: titulofont;
 }
 .just_white{
     background-color: white;
     /*overflow-x: scroll;*/
-    /*font-family: myFirstFont !important;
+    /*font-family: titulofont !important;
 }
 .white_opacity, .white_opacity_not_animation{
     background-color: white;
     opacity: 0.95;
     overflow-x: scroll;
-    font-family: myFirstFont !important;
+    font-family: titulofont !important;
 }
 .white_opacity:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0),0 6px 20px 0 rgba(0,0,0,1.0);

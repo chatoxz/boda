@@ -17,17 +17,17 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    $(".timer_dia").html(days + ":");
-    $(".timer_hora").html(hours + ":");
-    $(".timer_min").html(minutes + ":");
+    $(".timer_dia").html(days + "");
+    $(".timer_hora").html(hours + "");
+    $(".timer_min").html(minutes + "");
     $(".timer_seg").html(seconds);
 
     // If the count down is finished, write some text
     if (distance < 0) {
         clearInterval(x);
-        $(".timer_dia").html(0 + ":");
-        $(".timer_horas").html(0 + ":");
-        $(".timer_min").html(0 + ":");
+        $(".timer_dia").html(0 + "");
+        $(".timer_horas").html(0 + "");
+        $(".timer_min").html(0 + "");
         $(".timer_seg").html(0) ;
     }
 }, 1000);
