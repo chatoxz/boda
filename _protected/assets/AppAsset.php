@@ -25,11 +25,13 @@ class AppAsset extends AssetBundle
         'css/bootstrap.min.css',
         'css/style.css',
         'css/loaders_spinners.css',
+        'css/animation.css',
     ];
 
     public $js = [
         'js/main.js',
         'js/timer.js',
+        'js/css3-animate-it.js',
     ];
 
     public $depends = [

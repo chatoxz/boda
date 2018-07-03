@@ -17,7 +17,7 @@
     font-family: textofont;
     /*font-family: titulofont;*/
     /*src: url(/themes/light/fonts/starwars/Stjldbl1.ttf);*/
-    src: url(/themes/light/fonts/starwars/STJEDISE.ttf) ;
+    src: url(/themes/light/fonts/starwars/SerifGothic-Heavy.otf) ;
    /* src: url(/themes/light/fonts/starwars/death_star.otf) ;*/
     /*src: url(/themes/light/fonts/starwars/Star_Jedi_Rounded.TTF) ;*/
 }
@@ -26,6 +26,7 @@
     font-family: starjedi;
     src: url(/themes/light/fonts/starwars/Starjedi.ttf);
 }
+
 
 html,
 body {
@@ -37,6 +38,41 @@ body {
    /* background-image: url(/themes/light/img/fondo01.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;*/
+}
+
+.big_container{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.modal-header{
+    text-align: center;
+    font-family: textofont;
+}
+.item_regalo{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+    margin-bottom: 20px;
+    width: 100%
+}
+.site-index{
+    background-image: url(/themes/light/img/space.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrap_testigxs{
+    background-image: url(/themes/light/img/fondo2.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    padding: 60px 0px;
+    margin-left: -15px ;
+    margin-right: -15px ;
+}
+.wrap_testigxs .container{
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
 }
 /*
 .navbar-brand img{
@@ -79,8 +115,12 @@ body {
     height: 60px;
     border-top: 1px solid #e5e5e5;
     padding-top: 20px;
+    color: white;
+    font-family: textoIntermedioTitPpalFont;
 }
-
+.footer .container{
+    margin-bottom: 0px !important;
+}
 .not-set {
     color: #c55;
     font-style: italic;
@@ -221,7 +261,7 @@ div.required label:after {
     vertical-align: middle;
 }
 
-.titulo_1, .titulo_principal, .titulo_1_black{
+.titulo_1, .titulo_2, .titulo_principal, .titulo_1_black, .titulo_2_black{
     display: block;
     margin: auto;
     font-size: 48px;
@@ -231,29 +271,33 @@ div.required label:after {
     font-family: titulofont !important;
     color: white;
 }
-.titulo_1_black{
-    color: black;
-}
+
 .titulo_principal{
     font-family: tituloPrincipalFont !important;
     color: yellow;
     display: flex;
     flex-direction: column;
     font-size: 68px;
-
 }
+
 .texto_intermedio_tit_ppal{
     font-size: 26px;
     color: white;
     font-family: textoIntermedioTitPpalFont !important;
 
 }
-.texto_1{
+
+.texto_1, .texto_1_black{
     font-size: 30px;
     text-align: center;
     font-family: textofont !important;
     color: white;
-
+}
+.titulo_1_black, .texto_1_black, .titulo_2_black{
+    color: black;
+}
+.titulo_2_black, .titulo_2{
+    font-size: 26px;
 }
 .btn-como-llegar{
     border-radius: 50px !important;
@@ -270,7 +314,9 @@ div.required label:after {
 .btn-como-llegar:hover {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25) !important;
 }
-
+.btn-texto{
+    font-family: textoIntermedioTitPpalFont !important;
+}
 .btn-como-llegar:hover,.btn-como-llegar  a:hover,.btn-como-llegar  a:focus{
     color: #000000 !important;
     background-color: #ffffff !important;
@@ -300,7 +346,19 @@ div.required label:after {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+.wrap_regalo img{
+    align-self: center;
 
+}
+.wrap_regalo{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 200px;
+    margin-bottom: 30px;
+}
 
 /*
 

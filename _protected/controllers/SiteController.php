@@ -98,7 +98,7 @@ class SiteController extends Controller
      */
     public function actionRegalos()
     {
-        return $this->render('regalos');
+        return $this->renderAjax('regalos');
     }
     /**
      * Displays the confirmar asistencia page.

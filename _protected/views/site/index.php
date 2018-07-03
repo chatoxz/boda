@@ -4,26 +4,28 @@
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
 <div class="site-index">
+    <!--
     <div class="wrap_first_img" >
         <img  class="first_img" src="/themes/light/img/chato_lou2.jpg" width="100%" alt="">
     </div>
+    -->
     <div class="container" >
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="titulo_principal">
-                <span style="margin-bottom: -15px"> Chato </span>
+        <div class="col-xs-12 col-sm-12 col-md-12 animatedParent">
+            <div class="titulo_principal animated bounceInDown box animatedClick" data-target='clickExample' >
+                <span style="margin-bottom: -10px"> <img  class="first_img" src="/themes/light/img/chato.png" width="100%" alt=""> </span>
                 <span class="texto_intermedio_tit_ppal">SE CASAMO VIEJX DEL AGUA</span>
-                <span style="margin-top: -26px"> +Lou</span>
+                <span style="margin-top: -28px"><img  class="first_img" src="/themes/light/img/lou.png" width="100%" alt=""></span>
             </div>
-            <p class="titulo_1">
+            <p class="titulo_1     " >
                 Capitulo x
             </p>
-            <p class="texto_1">
-                Wedding.  El lado oscuro y lo otro, se quieren da vuelta como media en el casorio de la Lou y el Chato.
-
-
+            <p class="texto_1   clickExample " >
+                Wedding!  El lado oscuro y lo otro se quieren da vuelta como media en el casorio de la Lou y el Chato.
             </p>
         </div>
     </div>
+
+    <!-- RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ RELOJ -->
     <div class="container countdown" style="text-align: center">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
@@ -54,18 +56,21 @@ $this->title = Yii::t('app', Yii::$app->name);
     </div>
 
 
-    <div class="container" style="text-align: center">
+    <div class="container    "  " style="text-align: center">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <img src="/themes/light/img/new_order_jedi.png" alt="" width="150">
             <div class="titulo_1">Ceremonia Religiosa</div>
             <p class="texto_1">
                 La Ceremonia, en la iglesia San Maron, se realizara. A las 11:00 hs, el Sabado 18 de agosto debes estar.
             </p>
-            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
+            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span class="btn-texto">Como llegar!</span>
+            </a>
         </div>
     </div>
 
-    <div class="container" style="text-align: center">
+    <div class="container  "  " style="text-align: center">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <img src="/themes/light/img/separatist.png" alt="" width="150">
             <div class="titulo_1">Fiesta</div>
@@ -76,56 +81,59 @@ $this->title = Yii::t('app', Yii::$app->name);
                 <img src="/themes/light/img/dresscode.png" alt="" width="100">
                 Dresscode: Formal
             </p>
-            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/1dW43Zt1Zem" target="_blank"><span class="glyphicon glyphicon-map-marker"></span>Como llegar!</a>
+            <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/1dW43Zt1Zem" target="_blank">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <span class="btn-texto">Como llegar!</span>
+            </a>
         </div>
     </div>
-    <div style="padding: 60px 0px;background-color: rgb(255,255,255)">
-        <div class="container" style="text-align: center">
+    <div class="wrap_testigxs  " style="">
+        <div class="container" style="">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="titulo_1_black">
                     <img src="/themes/light/img/c3po.png" alt="" width="30" style="padding-bottom: 50px">
                     Padrinos y Madrinas
-                    <img src="/themes/light/img/r2d2.png" alt="" width="30" style="padding-bottom: 50px">
+                    <img src="/themes/light/img/r2d2.png" alt="" width="30" style="padding-bottom: 24px">
                 </div>
-                <div class="titulo_1_black">De la Novia</div>
+                <div class="titulo_2_black">De la Novia</div>
                 <div class="wrap_bloque_fotos_padrinx">
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1_black">Iglesia</div>
+                        <div class="titulo_2_black">Iglesia</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Victor</div>
-                                <div class="texto_1">Papá</div>
+                                <div class="texto_1_black">Victor</div>
+                                <div class="texto_1_black">Papá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                         </div>
                     </div>
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1_black">Civil</div>
+                        <div class="titulo_2_black">Civil</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Victor</div>
-                                <div class="texto_1">Papá</div>
+                                <div class="texto_1_black">Victor</div>
+                                <div class="texto_1_black">Papá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                         </div>
                     </div>
@@ -135,45 +143,45 @@ $this->title = Yii::t('app', Yii::$app->name);
 
         <div class="container" style="text-align: center">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="titulo_1_black">Del Novio</div>
+                <div class="titulo_2_black">Del Novio</div>
                 <div class="wrap_bloque_fotos_padrinx">
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1_black">Iglesia</div>
+                        <div class="titulo_2_black">Iglesia</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Victor</div>
-                                <div class="texto_1">Papá</div>
+                                <div class="texto_1_black">Victor</div>
+                                <div class="texto_1_black">Papá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                         </div>
                     </div>
                     <div class="wrap_sub_bloque_fotos_padrinx">
-                        <div class="titulo_1_black">Civil</div>
+                        <div class="titulo_2_black">Civil</div>
                         <div class="wrap_fotos_padrinx">
                             <div class="detalle_foto_padrinx">
                                 <div><img src="/themes/light/img/padrinxs/luz.jpg" width="280" alt=""></div>
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Victor</div>
-                                <div class="texto_1">Papá</div>
+                                <div class="texto_1_black">Victor</div>
+                                <div class="texto_1_black">Papá</div>
                             </div>
                             <div class="detalle_foto_padrinx">
                                 <img src="/themes/light/img/padrinxs/mama.jpg" width="280" alt="">
-                                <div class="texto_1">Elvira</div>
-                                <div class="texto_1">Mamá</div>
+                                <div class="texto_1_black">Elvira</div>
+                                <div class="texto_1_black">Mamá</div>
                             </div>
                         </div>
                     </div>
@@ -181,26 +189,29 @@ $this->title = Yii::t('app', Yii::$app->name);
             </div>
         </div>
     </div>
-    <div class="container" style="text-align: center;padding: 60px 0px">
+    <!-- REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS REGALOS -->
+    <div class="container animated " style="text-align: center;padding: 40px 0px">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <img src="/themes/light/img/regalos.png" alt="" width="550">
+            <img src="/themes/light/img/falcon.png" alt="" width="250">
             <div class="titulo_1">¿Pensaste en regalos?</div>
             <p class="texto_1">
                 Realmente somos afortunados y no necesitamos nada. Pero... nos podes ayudar con nuestra Luna de Miel
             </p>
-            <a class="btn btn-default btn-como-llegar" href="regalos" target="_blank">
-                <img src="/themes/light/img/credito2.png" alt="" width="50">
-                Regalar!</a>
+            <a class="btn btn-default btn-como-llegar modalButton" title="Regalo!" value="regalos" size="">
+                <img src="/themes/light/img/credito3.png" alt="" width="50">
+                <span class="btn-texto">Regalar!</span></a>
         </div>
     </div>
 
-    <div class="container" style="text-align: center;padding: 60px 0px;background-color: rgb(239, 239, 239)">
+    <!-- ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA ASISTENCIA -->
+    <div class="container animated " style="text-align: center;padding: 70px 0px; margin-bottom: 0px !important   ">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <img src="/themes/light/img/confirmar.png" alt="" width="550">
             <p class="texto_1">
-                ¡Te esperamos para compartir!
+                Ven al lado oscuro!
             </p>
-            <a class="btn btn-default btn-como-llegar modalButton" title="Confirmar presencia" value="confirmar" size="" target="_blank"><span class="glyphicon glyphicon-star"></span>Confirmar asistencia</a>
+            <a class="btn btn-default btn-como-llegar modalButton" title="Confirmar presencia" value="confirmar" size="" target="_blank">
+                <span class="glyphicon glyphicon-star"></span> <span class="btn-texto">Confirmar asistencia</span></a>
         </div>
     </div>
 
@@ -264,5 +275,3 @@ $this->title = Yii::t('app', Yii::$app->name);
     </div>
 -->
 </div>
-
-

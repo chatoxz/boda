@@ -92,7 +92,7 @@ AppAsset::register($this);
     } ?>
 
     <!-- FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER -->
-    <div class="container-fluid">
+    <div class="container-fluid big_container">
         <?php echo Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -111,7 +111,7 @@ AppAsset::register($this);
 
 <?php
 // MODAL PARA USARASE EN TODOS LAS VISTAS
-Modal::begin([ 'id' => 'modal', 'header' => '<h2>Prode</h2>', 'size' => '']);
+Modal::begin([ 'id' => 'modal', 'header' => '<h2>Boda</h2>', 'size' => '']);
 echo '<div id="modalContent"></div>';
 echo '<div class="alert alert-info resultado hidden" style="margin: 10px 30px;"></div>';
 Modal::end();

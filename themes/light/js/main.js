@@ -114,24 +114,9 @@ $(document).on("ready",function () {
         return false;
     });
 
+    //setInterval(setHora, 60000);
 
-    setInterval(setHora, 60000);
 })
-$(window).on('load', function() {
-    //fondo segunda fase
-    /*if(window.location.pathname == "/partido/segunda-fase"){
-        var imagen = document.getElementById("id_body");
-        imagen.style.backgroundImage = "none";
-        $(".container").eq(0).addClass("container-fluid").removeClass("container");
-        $("body").css('background-image','none');
-    }*/
-});
 
-function setHora() {
-    $.ajax({
-        url: '/site/hora',
-        success: function(data) {
-            $('.hora a').html(data);
-        },
-    });
-}
+
+
