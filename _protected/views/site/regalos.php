@@ -13,7 +13,7 @@
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
         <span> Número de Cuenta </span>
-        <span> Cuenta N° 462-321144/9</span>
+        <span> 462-321144/9</span>
     </div>
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
@@ -22,14 +22,14 @@
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
         <span> Alias </span>
-        <span>   CARRERAS.SEBASTIAN </div>
+        <span> CARRERAS.SEBASTIAN </div>
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
         <span> Titular</span>
         <span> SEBASTIAN CARRERAS</div>
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
-        <span>CUIL/CUIT </span>
+        <span> CUIL/CUIT </span>
         <span> 23-31254260-9 </span>
     </div>
 </div>
@@ -37,7 +37,8 @@
     <div class="titulo_2_black"> Mercado pago</div>
     <div class="titulo_2_black" style="font-size: 18px">
         <form action="">
-            <input type="text" id="tbSearch" name="tbSearch" />
+            <label for="">Ingresa el monto del regalo y luego selecciona la opcion que mas te guste</label>
+            <input type="text" id="tbSearch" name="tbSearch" placeholder=""  width="100"/>
         </form>
     </div>
     <div class="wrap_opciones_mercado_pago">

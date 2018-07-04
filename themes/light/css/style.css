@@ -55,6 +55,13 @@ body {
     margin-bottom: 20px;
     width: 100%
 }
+
+.item_regalo img {
+    margin-right: 15px;
+}
+.item_regalo span{
+    padding-right: 15px;
+}
 .site-index{
     background-image: url(/themes/light/img/space.png);
     background-attachment: fixed;
