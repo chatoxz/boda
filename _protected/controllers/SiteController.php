@@ -90,6 +90,8 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+
+
     /**
      * Displays the regalos page.
      * Use it in case your home page contains static content.
@@ -110,6 +112,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request;
         $model = Invitado::find()->where(['id_boda' => 1 ])->all();
+        //var_dump($model);
         if($request->isGet) {
             return $this->renderAjax('confirmar', ['model' => $model]);
         }else{

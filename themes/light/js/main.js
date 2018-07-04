@@ -17,6 +17,7 @@ $(document).on("ready",function () {
         }
         $(".modal-header > h1, .modal-header > h2, .modal-header > h3").html($(this).attr("title"));
         $("#modal").modal("show");
+        //alert($(this).attr("value"));
         //carga en el modalContent la pagina.
         // LOS DATOS SE PASAN A TRAVES DE LA URL
         if(confirmar){

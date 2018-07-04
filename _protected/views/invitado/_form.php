@@ -1,21 +1,24 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use kartick\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Invitado */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form kartik\widgets\ActiveForm */
 
 ?>
 
 <div class="invitado-form">
 
+
+    <?php //var_dump($model) ;?>
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
+    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'id_boda')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Boda::find()->orderBy('id')->asArray()->all(), 'id', 'id'),

@@ -61,6 +61,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 .wrap_testigxs{
     background-image: url(/themes/light/img/fondo2.jpg);
@@ -100,15 +101,11 @@ body {
     text-align: center !important;
     padding: 70px 15px 20px;
 }
-
-.jumbotron {
-    text-align: center;
-    border: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+.wrap_opciones_mercado_pago{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .footer {

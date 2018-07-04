@@ -25,7 +25,7 @@ class AppAsset extends AssetBundle
         'css/bootstrap.min.css',
         'css/style.css',
         'css/loaders_spinners.css',
-        'css/animation.css',
+        'css/animations.css',
     ];
 
     public $js = [
@@ -36,6 +36,6 @@ class AppAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'app\assets\FontAwesomeAsset',
+        //'app\assets\FontAwesomeAsset',
     ];
 }

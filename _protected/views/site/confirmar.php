@@ -7,3 +7,6 @@
  */
 ?>
 
+<div class="invitado-update">
+    <?= $this->render('/invitado/_form', ['model' => $model,]) ?>
+</div>
