@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\app\models\InvitadoSearch */
+/* @var $searchModel app\models\InvitadoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
@@ -16,27 +16,29 @@ $search = "$('.search-button').click(function(){
 });";
 $this->registerJs($search);
 ?>
-<div class="invitado-index">
+<div class="invitado-index" >
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Invitado', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>
-    </p>
-    <div class="search-form" style="display:none">
-        <?=  $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="row">
+        <div class="col-xs-12 col-md-12" style="display: flex;justify-content: space-around;flex-wrap: wrap;font-size: 18px">
+            <div class="alert alert-warning"><?= "Sin confirmar: ".$sin_confirmar ?></div>
+            <div class="alert alert-success"><?= "Confirmados: ".$confirmados ?></div>
+            <div class="alert alert-danger"><?= "No asistiran: ".$no_iran ?></div>
+            <div style="align-self: right"><?= Html::a('Agregar Invitado', ['create'], ['class' => 'btn btn-info']) ?></div>
+        </div>
+        <!--<?php //echo Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>-->
     </div>
-    <?php 
+    <div class="clearfix"></div>
+    <?php
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
-        ['attribute' => 'id', 'visible' => false],
-        [
+        //['attribute' => 'id', 'visible' => false],
+        /*[
                 'attribute' => 'id_boda',
                 'label' => 'Id Boda',
-                'value' => function($model){                   
-                    return $model->boda->id;                   
+                'value' => function($model){
+                    return $model->boda->id;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\Boda::find()->asArray()->all(), 'id', 'id'),
@@ -44,14 +46,26 @@ $this->registerJs($search);
                     'pluginOptions' => ['allowClear' => true],
                 ],
                 'filterInputOptions' => ['placeholder' => 'Boda', 'id' => 'grid-invitado-search-id_boda']
-            ],
+            ],*/
         'nombre',
-        'confirmacion',
+        [
+            'attribute' => 'confirmacion',
+            'label' => 'Confirmacion',
+            'value' => function($model){
+                if($model->confirmacion == 0)
+                    return "Sin confirmar";
+                if($model->confirmacion == 1)
+                    return "Confirmado";
+                if($model->confirmacion == 2)
+                    return "No asistira";
+            }
+        ],
+        //'confirmacion',
         'mensaje:ntext',
         [
             'class' => 'yii\grid\ActionColumn',
         ],
-    ]; 
+    ];
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

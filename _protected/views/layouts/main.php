@@ -7,11 +7,12 @@ use app\models\Instancia;
 use app\models\InstanciaUser;
 use app\models\Torneo;
 use app\widgets\Alert;
-use yii\helpers\Html;
 use yii\bootstrap\Modal;
+use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Url;
+use yii\web\View;
 use yii\widgets\Breadcrumbs;
 
 AppAsset::register($this);
@@ -53,19 +54,15 @@ AppAsset::register($this);
 
     // USUARIO COMUN USUARIO COMUN USUARIO COMUN USUARIO COMUN USUARIO COMUN USUARIO COMUN USUARIO COMUN
     if (!Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => (DATE('H')-3).":".DATE('i'), 'options'=>['class'=>'hora' ]];
+        //$menuItems[] = ['label' => (DATE('H')-3).":".DATE('i'), 'options'=>['class'=>'hora' ]];
         //$menuItems[] = ['label' => Yii::t('app', 'Reglas'), 'url' => ['/partido/reglas']];
-        $menuItems[] = '<li><a value="/partido/reglas" class="modalReglas" 
+        /*$menuItems[] = '<li><a value="/partido/reglas" class="modalReglas"
                     style="cursor: pointer;" title="Reglas" size="modal-lg" href="#">Reglas</a></li>';
-        $menuItems[] = [
-            'label' => Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
+       */
     }
 
     // ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN ADMIN
-    if (Yii::$app->user->can('admin')){
+    /*if (Yii::$app->user->can('admin')){
         //calcular puntos
         $subMenuAdmin[] = ['label' => Yii::t('app', 'Copas'), 'url' => ['/torneo/index']];
         $url = Url::toRoute(['/instancia/admin_torneo', 'id_user' => Yii::$app->user->id]);
@@ -75,7 +72,7 @@ AppAsset::register($this);
             'label' => 'Admin',
             'items' => $subMenuAdmin
         ];
-    }
+    }*/
 
     // LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP LOGIN SIGNUP
     /* if (Yii::$app->user->isGuest) {
@@ -84,11 +81,20 @@ AppAsset::register($this);
      }*/
 
     if (!Yii::$app->user->isGuest){
+        $menuItems[] = ['label' => Yii::t('app', 'Invitados'), 'url' => ['/invitado/index']];
+        $menuItems[] = [
+            'label' => Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
+            'url' => ['/site/logout'],
+            'linkOptions' => ['data-method' => 'post']
+        ];
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => $menuItems,
         ]);
         NavBar::end();
+        $this->registerCss(".wrap { background: white !important; }");
+        $this->registerCss(".navbar-default { height: 50px; background: white !important; }");
+        //$this->registerJs('$($(".big_container div")[0]).css("color","black").css("margin","30px");',View::POS_LOAD,"id_script");
     } ?>
 
     <!-- FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER -->
@@ -111,7 +117,10 @@ AppAsset::register($this);
 
 <?php
 // MODAL PARA USARASE EN TODOS LAS VISTAS
-Modal::begin([ 'id' => 'modal', 'header' => '<h2>Boda</h2>', 'size' => '']);
+Modal::begin([ 'options' => [
+    'id' => 'modal',
+    'tabindex' => false // important for Select2 to work properly
+], 'id' => 'modal', 'header' => '<h2>Boda</h2>', 'size' => '']);
 echo '<div id="modalContent"></div>';
 echo '<div class="alert alert-info resultado hidden" style="margin: 10px 30px;"></div>';
 Modal::end();

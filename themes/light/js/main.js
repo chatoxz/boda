@@ -55,22 +55,8 @@ $(document).on("ready",function () {
                 $(".resultado").html("");
                 console.log("LOG -> status: "+xhr.status+" thrownError: "+thrownError);
             });
-            //.find("#modalContent").load($(this).attr("value"));
         }
-
-        /*$('html body').animate({
-            scrollTop: $("#modal").offset().top
-        }, 2000);*/
-    });
-
-    //modal de las reglas
-    $("body").on("click touchstart",".modalReglas", function () {
-        $("#modalContent").html("<div class='loader_azul_muy_grande' style='margin: auto;display: block'></div>");
-        var url = $(this).attr("value") + "?id_instancia="+$("#id_instancia").text();
-        $(".modal-dialog").removeClass("modal-sm modal-lg").addClass($(this).attr("size"));
-        $("#modal").modal("show").find("#modalContent").load(url);
-        $(".modal-header > h1, .modal-header > h2, .modal-header > h3").html($(this).attr("title"));
-        $(".modal-body").css("padding","20px");
+        return false;
     });
 
     //FUNCIONAMIENTO DEL formulario con AJAX
@@ -95,17 +81,15 @@ $(document).on("ready",function () {
                         $.pjax.reload({container:"#id_gridview"});
 
                     if(window.location.pathname == "/partido/fixture"){ window.location.reload(); }
-                }, 22000);
+                }, 2000);
             }
             else{
-                $(".resultado").html("<span class='glyphicon glyphicon-cog' aria-hidden='true' style='padding-right: 10px'></span>"+response).css({"width":"90  %","text-align":"center"});
+                $(".resultado").html("<span class='glyphicon glyphicon-ok-sign' aria-hidden='true' style='padding-right: 10px'></span>"+response).css({"width":"90  %","text-align":"center"});
                 setTimeout(function(){
-                    $("#modal").modal("hide");
+                    //$("#modal").modal("hide");
                     $(".resultado").html("").addClass("hidden");
                     //Si esta seteado el id del gridview lo recarga con el pjax
-                    if ( typeof $("#id_gridview").html() !== "undefined"  ) $.pjax.reload({container:"#id_gridview"});
-                    //recargo la pagina segunda_fase despues de la prediccion
-                    if(window.location.pathname == "/partido/segunda-fase"){ window.location.reload(); }
+                    //if ( typeof $("#id_gridview").html() !== "undefined"  ) $.pjax.reload({container:"#id_gridview"});
                 }, 2000);
             }
         }).fail(function (xhr, ajaxOptions, thrownError){
@@ -114,6 +98,42 @@ $(document).on("ready",function () {
         });
         return false;
     });
+    //FUNCIONAMIENTO DEL formulario con AJAX
+    $("body").on("beforeSubmit", "form#id_form_confirmar", function () {
+        var form = $(this);
+        $(".resultado").show().removeClass("hidden").html("<div class='loader_tricolor_chico' style='margin: auto;display: block'></div>");
+
+        $.ajax({
+            url: form.attr("action"),
+            type: "post",
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+        }).done (function (response){
+            if(!response || response.length === 0){
+                $(".resultado").html("<span style='font-size: 16px;margin:auto' class='glyphicon glyphicon-ok' aria-hidden='true'></span> Accion realizada.");
+                setTimeout(function(){
+                    $("#modal").modal("hide");
+                    $(".resultado").html("").addClass("hidden");
+                    //Si esta seteado el id del gridview lo recarga con el pjax
+                    if ( typeof $("#id_gridview").html() !== "undefined"  )
+                        $.pjax.reload({container:"#id_gridview"});
+                    //if(window.location.pathname == "/partido/fixture"){ window.location.reload(); }
+                }, 2000);
+            }
+            else{
+                $(".resultado").html("<span class='glyphicon glyphicon-ok-sign' aria-hidden='true' style='padding-right: 10px'></span>"+response).css({"width":"90  %","text-align":"center"});
+                setTimeout(function(){ $(".resultado").fadeOut(2000); }, 2000);
+            }
+        }).fail(function (xhr, ajaxOptions, thrownError){
+            $(".resultado").html("");
+            console.log("LOG -> status: "+xhr.status+" thrownError: "+thrownError);
+        });
+        return false;
+    });
+    if(window.location.pathname != "/") {
+        $($(".big_container div")[0]).css("color", "black").css("margin", "30px");
+    }
 
     //setInterval(setHora, 60000);
 

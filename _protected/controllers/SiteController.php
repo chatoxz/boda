@@ -9,6 +9,7 @@ use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
 use app\models\SignupForm;
 use app\models\ContactForm;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -111,16 +112,44 @@ class SiteController extends Controller
     public function actionConfirmar()
     {
         $request = Yii::$app->request;
-        $model = Invitado::find()->where(['id_boda' => 1 ])->all();
+        $model = new Invitado();
+        $model->id = 0;
+        $model->id_boda = 1;
+        $invitados = ArrayHelper::map(Invitado::find()->where(['id_boda' => 1])->all(), 'id', 'nombre');
+
         //var_dump($model);
-        if($request->isGet) {
-            return $this->renderAjax('confirmar', ['model' => $model]);
-        }else{
-            echo "Asistencia confirmada!";
+        if ($request->isGet) {
+            return $this->renderAjax('confirmar', ['model' => $model, 'invitados' => $invitados]);
+        } else {
+            if ($model->load(Yii::$app->request->post())) {
+                $invitado = Invitado::findOne(['id' => $model->id ]);
+                $invitado->mensaje = $model->mensaje;
+                $invitado->confirmacion = $model->confirmacion;
+                $invitado->save();
+                echo "Gracias por tu respuesta!";
+            }
         }
     }
 
     /**
+     * Displays the about static page.
+     *
+     * @return string
+     */
+    public function actionPagoExitoso()
+    {
+        return $this->redirect('index');
+    }
+/**
+     * Displays the about static page.
+     *
+     * @return string
+     */
+    public function actionPagoProceso()
+    {
+        return $this->redirect('index');
+    }
+/**
      * Displays the about static page.
      *
      * @return string

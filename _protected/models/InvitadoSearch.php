@@ -63,6 +63,7 @@ use app\models\Invitado;
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre])
             ->andFilterWhere(['like', 'mensaje', $this->mensaje]);
+        //$query->orderBy(['nombre'=>SORT_ASC]);
 
         return $dataProvider;
     }

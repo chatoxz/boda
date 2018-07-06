@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Invitado;
-use app\models\app\models\InvitadoSearch;
+use app\models\InvitadoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -33,11 +33,17 @@ class InvitadoController extends Controller
     public function actionIndex()
     {
         $searchModel = new InvitadoSearch();
+        $searchModel->id_boda = 1;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $sin_confirmar = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 0])->count();
+        $confirmados = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 1])->count();
+        $no_iran = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 2])->count();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'confirmados' => $confirmados,
+            'sin_confirmar' => $sin_confirmar,
+            'no_iran' => $no_iran,
         ]);
     }
 

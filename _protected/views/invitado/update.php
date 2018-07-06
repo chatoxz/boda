@@ -9,6 +9,7 @@ $this->title = 'Update Invitado: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Invitado', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
+
 ?>
 <div class="invitado-update">
 

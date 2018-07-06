@@ -51,6 +51,7 @@ body {
 .item_regalo{
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     font-size: 18px;
     margin-bottom: 20px;
     width: 100%
@@ -77,8 +78,9 @@ body {
     padding: 60px 0px;
     margin-left: -15px ;
     margin-right: -15px ;
+    margin-bottom: 90px;
 }
-.wrap_testigxs .container{
+.wrap_testigos_backgorund_fade{
     background-color: rgba(255,255,255,0.8);
     text-align: center;
 }
@@ -303,6 +305,19 @@ div.required label:after {
 .titulo_2_black, .titulo_2{
     font-size: 26px;
 }
+.texto_padrinx{
+    font-size: 24px;
+}
+.detalle_foto_padrinx{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.div_foto_padrinx{
+    width: 180px;
+    height: 187px;
+    overflow-y: hidden;
+    margin-bottom: 15px;
+}
 .btn-como-llegar{
     border-radius: 50px !important;
     font-size: 20px !important;
@@ -349,12 +364,13 @@ div.required label:after {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 .wrap_regalo img{
     align-self: center;
 
 }
-.wrap_regalo{
+.wrap_regalo, .wrap_regalo:hover, .wrap_regalo:focus{
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -362,6 +378,19 @@ div.required label:after {
     flex-wrap: wrap;
     width: 200px;
     margin-bottom: 30px;
+    text-decoration: none !important;
+    color: black !important;
+}
+.wrap_regalo span, .wrap_regalo span:hover, .wrap_regalo span:focus{
+    text-decoration: none !important;
+    color: black !important;
+    font-family: textofont !important;
+}
+#tbSearch{
+    display: block;
+    margin: auto;
+    width: 240px;
+    margin-bottom: 40px;
 }
 
 /*
