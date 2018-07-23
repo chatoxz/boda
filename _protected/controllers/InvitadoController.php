@@ -30,20 +30,29 @@ class InvitadoController extends Controller
      * Lists all Invitado models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($tipo_invitado = 3)
     {
+
         $searchModel = new InvitadoSearch();
         $searchModel->id_boda = 1;
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $sin_confirmar = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 0])->count();
-        $confirmados = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 1])->count();
-        $no_iran = Invitado::find()->where(['id_boda' => 1, 'confirmacion' => 2])->count();
+        if($tipo_invitado == 3)
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        else{
+            $searchModel->confirmacion = $tipo_invitado;
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        }
+        $sin_confirmar = Invitado::find()->where(['confirmacion' => '0'])->count();
+        $confirmados = Invitado::find()->where(['confirmacion' => '1'])->count();
+        $no_iran = Invitado::find()->where(['confirmacion' => '2'])->count();
+        $todos = Invitado::find()->count();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'confirmados' => $confirmados,
             'sin_confirmar' => $sin_confirmar,
             'no_iran' => $no_iran,
+            'todos' => $todos,
         ]);
     }
 
@@ -55,7 +64,7 @@ class InvitadoController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        return $this->render('view', [
+        return $this->renderAjax('view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -68,11 +77,15 @@ class InvitadoController extends Controller
     public function actionCreate()
     {
         $model = new Invitado();
-
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $id_boda = 1;
+        if ($model->loadAll(Yii::$app->request->post())) {
+            $model->saveAll();
+            //return $this->redirect(['index']);
         } else {
-            return $this->render('create', [
+            $last_id = Invitado::find()->orderBy(['id' => SORT_DESC])->one()->id + 1;
+            $model->id = $last_id;
+            $model->id_boda = $id_boda;
+            return $this->renderAjax('create', [
                 'model' => $model,
             ]);
         }
@@ -89,9 +102,10 @@ class InvitadoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+           // return $this->redirect(['index']);
         } else {
-            return $this->render('update', [
+            return $this->renderAjax('update', [
                 'model' => $model,
             ]);
         }

@@ -98,7 +98,8 @@ $(document).on("ready",function () {
         });
         return false;
     });
-    //FUNCIONAMIENTO DEL formulario con AJAX
+    //PARA LA CONFIRMACION DE LA ASISTENCIA
+    //FUNCIONAMIENTO DEL formulario con AJAX PARA LA CONFIRMACION DE LA ASISTENCIA
     $("body").on("beforeSubmit", "form#id_form_confirmar", function () {
         var form = $(this);
         $(".resultado").show().removeClass("hidden").html("<div class='loader_tricolor_chico' style='margin: auto;display: block'></div>");
@@ -136,8 +137,30 @@ $(document).on("ready",function () {
     }
 
     //setInterval(setHora, 60000);
-
+    setBtnModal();
 })
+
+$(document).on('pjax:success', function() {
+    setBtnModal()
+});
+
+function setBtnModal(){
+    $("a[title='Save As New']").each(function (index) {
+        $(this).attr().attr('value',$(this).attr('href')).addClass('modalButton');
+    });
+    $("a[title=Ver]").each(function (index) {
+        $(this).attr('value',$(this).attr('href')).addClass('modalButton');
+    });
+    $("a[title=View]").each(function (index) {
+        $(this).attr('value',$(this).attr('href')).attr('size', 'modal-lg').addClass('modalButton');
+    });
+    $("a[title=Actualizar]").each(function (index) {
+        $(this).attr('value',$(this).attr('href')).addClass('modalButton');
+    });
+    $("a[title=Update]").each(function (index) {
+        $(this).attr('value',$(this).attr('href')).addClass('modalButton');
+    });
+}
 
 
 

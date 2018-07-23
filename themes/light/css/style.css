@@ -39,6 +39,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;*/
 }
+.collapse.in, .collapsing   {
+    background-color: white !important;
+}
 
 .big_container{
     padding-right: 0px !important;

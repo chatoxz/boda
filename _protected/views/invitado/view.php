@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
 
@@ -18,9 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?= 'Invitado'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
-            
-            <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+            <?php $url = Url::toRoute(['update', 'id' => $model->id]); ?>
+            <?= Html::button('Actualizar', ['value' => $url , 'class' => 'btn btn-primary modalButton','title' => 'Actualizar']) ?>
+            <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => 'Are you sure you want to delete this item?',
@@ -49,17 +50,17 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
-    <div class="row">
-        <h4>Boda<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
+    <!--<div class="row">
+        <h4>Boda<?php// echo ' '. Html::encode($this->title) ?></h4>
+    </div>-->
     <?php 
-    $gridColumnBoda = [
+    /*$gridColumnBoda = [
         ['attribute' => 'id', 'visible' => false],
         'id_novio',
         'id_novia',
     ];
     echo DetailView::widget([
         'model' => $model->boda,
-        'attributes' => $gridColumnBoda    ]);
+        'attributes' => $gridColumnBoda    ]);*/
     ?>
 </div>

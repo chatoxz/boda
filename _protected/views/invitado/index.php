@@ -5,6 +5,7 @@
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
@@ -16,16 +17,23 @@ $search = "$('.search-button').click(function(){
 });";
 $this->registerJs($search);
 ?>
-<div class="invitado-index" >
+<div class="invitado-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="row">
         <div class="col-xs-12 col-md-12" style="display: flex;justify-content: space-around;flex-wrap: wrap;font-size: 18px">
-            <div class="alert alert-warning"><?= "Sin confirmar: ".$sin_confirmar ?></div>
-            <div class="alert alert-success"><?= "Confirmados: ".$confirmados ?></div>
-            <div class="alert alert-danger"><?= "No asistiran: ".$no_iran ?></div>
-            <div style="align-self: right"><?= Html::a('Agregar Invitado', ['create'], ['class' => 'btn btn-info']) ?></div>
+            <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 3]); ?>
+            <a href="<?= $url ?>"> <div class="alert alert-info"><?= "Todos: ".$todos ?></div></a>
+            <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 0]); ?>
+            <a href="<?= $url ?>"> <div class="alert alert-warning"><?= "Sin confirmar: ".$sin_confirmar ?></div></a>
+            <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 1]); ?>
+            <a href="<?= $url ?>"><div class="alert alert-success"><?= "Confirmados: ".$confirmados ?></div></a>
+            <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 2]); ?>
+            <a href="<?= $url ?>"><div class="alert alert-danger"><?= "No asistiran: ".$no_iran ?></div></a>
+
+            <?php $url = Url::toRoute(['invitado/create']); ?>
+            <?= Html::button('Agregar Invitado', ['value' => $url , 'class' => 'alert alert-info modalButton','title' => 'Crear', 'sytle' => 'align-self: right']) ?>
         </div>
         <!--<?php //echo Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>-->
     </div>
@@ -72,7 +80,7 @@ $this->registerJs($search);
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-invitado']],
+        'pjaxSettings' => ['options' => ['id' => 'id_gridview']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),

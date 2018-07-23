@@ -94,6 +94,8 @@ AppAsset::register($this);
         NavBar::end();
         $this->registerCss(".wrap { background: white !important; }");
         $this->registerCss(".navbar-default { height: 50px; background: white !important; }");
+        //$this->registerCss(".navbar-collapse { height: auto; background: white !important; }");
+        $this->registerCss(".modal-body { color: black !important; }");
         //$this->registerJs('$($(".big_container div")[0]).css("color","black").css("margin","30px");',View::POS_LOAD,"id_script");
     } ?>
 
@@ -118,10 +120,10 @@ AppAsset::register($this);
 <?php
 // MODAL PARA USARASE EN TODOS LAS VISTAS
 Modal::begin([ 'options' => [
-    'id' => 'modal',
+    'id' => 'modal','style' => 'color:black',
     'tabindex' => false // important for Select2 to work properly
 ], 'id' => 'modal', 'header' => '<h2>Boda</h2>', 'size' => '']);
-echo '<div id="modalContent"></div>';
+echo '<div id="modalContent" ></div>';
 echo '<div class="alert alert-info resultado hidden" style="margin: 10px 30px;"></div>';
 Modal::end();
 ?>
