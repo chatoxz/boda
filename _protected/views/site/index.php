@@ -59,13 +59,12 @@ $this->title = Yii::t('app', Yii::$app->name);
         </div>
     </div>
 
-
     <div class="container  animatedParent " style="text-align: center">
         <div class="col-xs-12 col-sm-12 col-md-12 slowest  animated bounceInDown">
             <img src="/themes/light/img/new_order_jedi.png" alt="" width="150">
             <div class="titulo_1">Ceremonia Religiosa</div>
             <p class="texto_1">
-                En la iglesia nuestra señora del milagro y san maron, la Ceremonia se realizara. A las 11:00 hs, el Sabado 18 de agosto debes estar.
+                En la iglesia Nuestro Señor del Milagro y San Marón, la Ceremonia se realizara. A las 11:00 hs, el Sabado 18 de agosto debes estar.
             </p>
             <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank">
                 <span class="glyphicon glyphicon-map-marker"></span>

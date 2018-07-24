@@ -22,7 +22,7 @@ $this->registerJs($search);
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="row">
-        <div class="col-xs-12 col-md-12" style="display: flex;justify-content: space-around;flex-wrap: wrap;font-size: 18px">
+        <div class="col-xs-12 col-md-12 wrap_invitados_buttons" style="">
             <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 3]); ?>
             <a href="<?= $url ?>"> <div class="alert alert-info"><?= "Todos: ".$todos ?></div></a>
             <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 0]); ?>
@@ -31,7 +31,6 @@ $this->registerJs($search);
             <a href="<?= $url ?>"><div class="alert alert-success"><?= "Confirmados: ".$confirmados ?></div></a>
             <?php $url = Url::toRoute(['/invitado/index', 'tipo_invitado' => 2]); ?>
             <a href="<?= $url ?>"><div class="alert alert-danger"><?= "No asistiran: ".$no_iran ?></div></a>
-
             <?php $url = Url::toRoute(['invitado/create']); ?>
             <?= Html::button('Agregar Invitado', ['value' => $url , 'class' => 'alert alert-info modalButton','title' => 'Crear', 'sytle' => 'align-self: right']) ?>
         </div>

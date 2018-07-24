@@ -39,6 +39,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;*/
 }
+
+.wrap_invitados_buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 18px
+}
+.wrap_invitados_buttons a:hover,.wrap_invitados_buttons a:focus {
+    text-decoration: none;
+}
 .collapse.in, .collapsing   {
     background-color: white !important;
 }
