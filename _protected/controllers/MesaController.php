@@ -80,19 +80,24 @@ class MesaController extends Controller
     public function actionCreate()
     {
         $model = new Mesa();
-        $id_boda = 1;
-        $model->id_boda = $id_boda;
-        //$model->id = 1;
-        $model->id = Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->id + 1;
-        if ( sizeof(Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->numero) > 0 ) {
-            $model->numero = Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->numero + 1;
-            $model->nombre = "Mesa ".$model->numero;
-        }else{
-            $model->numero = 1;
-        }
+
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id, 'id_boda' => $model->id_boda]);
         } else {
+            $id_boda = 1;
+            $model->id_boda = $id_boda;
+            //$model->id = 1;
+            if (sizeof(Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()) > 0){
+                $model->id = Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->id + 1;
+            }else{
+                $model->id = 1;
+            }
+            if ( sizeof(Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()) > 0 ) {
+                $model->numero = Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->numero + 1;
+                $model->nombre = "Mesa ".$model->numero;
+            }else{
+                $model->numero = 1;
+            }
             return $this->render('create', [
                 'model' => $model,
             ]);

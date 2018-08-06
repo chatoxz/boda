@@ -10,7 +10,8 @@ $items = [
         ]),
     ],*/
             [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode('Invitados de la mesa'),
+        'label' => '<div style="color: black"><i class="glyphicon glyphicon-book"></i> '. Html::encode('Invitados de la mesa')
+            .'<div style="font-size: 18px" ># Cantidad de la mesa: '.sizeof($model->mesaInvitados).'</div>'.'</div>',
         'content' => $this->render('_dataMesaInvitado', [
             'model' => $model,
             'row' => $model->mesaInvitados,

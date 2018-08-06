@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\models\Invitado::find()->orderBy('nombre')->asArray()->all(), 'id', 'nombre'),
+                'data' => \yii\helpers\ArrayHelper::map(\app\models\Invitado::find()->where(['<>','confirmacion' , '2' ])->orderBy('nombre')->asArray()->all(), 'id', 'nombre'),
                 'options' => ['placeholder' => 'Invitado'],
             ],
             'columnOptions' => ['width' => '200px']

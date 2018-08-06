@@ -47,6 +47,7 @@ $this->registerJs($search);
         [
                 'attribute' => 'id_boda',
                 'label' => 'Id Boda',
+                'visible' => false,
                 'value' => function($model){                   
                     return $model->boda->id;                   
                 },
