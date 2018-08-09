@@ -58,13 +58,8 @@ $this->registerJs($search);
         [
             'attribute' => 'confirmacion',
             'label' => 'Confirmacion',
-            'value' => function($model){
-                if($model->confirmacion == 0)
-                    return "Sin confirmar";
-                if($model->confirmacion == 1)
-                    return "Confirmado";
-                if($model->confirmacion == 2)
-                    return "No asistira";
+            'value' => function ($model){
+                return $model->getConfirmacion();
             }
         ],
         //'confirmacion',
