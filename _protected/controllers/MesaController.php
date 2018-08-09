@@ -2,9 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\base\MesaInvitado;
+use app\models\Invitado;
 use Yii;
 use app\models\Mesa;
 use app\models\MesaSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -28,7 +31,7 @@ class MesaController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'save-as-new', 'add-mesa-invitado'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'save-as-new', 'add-mesa-invitado','invitado_mesa'],
                         'roles' => ['@']
                     ],
                     [
@@ -55,6 +58,48 @@ class MesaController extends Controller
     }
 
     /**
+     * Lists all Mesa models.
+     * @return mixed
+     */
+    public function actionInvitado_mesa($tipo)
+    {
+        $id_boda = 1;
+        $searchModel = new MesaInvitado();
+
+        $query = Invitado::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $searchModel->load(Yii::$app->request->queryParams);
+
+        $query->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' );
+        $query->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa');
+        $query->andFilterWhere([
+            'id' => $searchModel->id,
+            'invitado.id_boda' => 1,
+        ]);
+        $query->andFilterWhere(['<=', 'invitado.confirmacion', 1]);
+        $query->andFilterWhere(['invitado.id_boda' => $id_boda ]);
+        if($tipo == 0){
+            $query->andWhere(['mesa_invitado.id_mesa' => null]);
+            $titulo = 'Invitados sin Mesa';
+            $query->orderBy(['nombre' => SORT_ASC]);
+        }else{
+            $query->andWhere(['not', ['mesa_invitado.id_mesa' => null]]);
+            $titulo = 'Invitados con Mesa';
+            $query->orderBy(['id_mesa' => SORT_ASC]);
+        }
+
+        return $this->render('invitado_mesa', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'titulo' => $titulo,
+        ]);
+    }
+
+    /**
      * Displays a single Mesa model.
      * @param integer $id
      * @param integer $id_boda
@@ -66,10 +111,17 @@ class MesaController extends Controller
         $providerMesaInvitado = new \yii\data\ArrayDataProvider([
             'allModels' => $model->mesaInvitados,
         ]);
-        return $this->render('view', [
-            'model' => $this->findModel($id, $id_boda),
-            'providerMesaInvitado' => $providerMesaInvitado,
-        ]);
+        if (Yii::$app->request->isAjax){
+            return $this->renderAjax('view', [
+                'model' => $this->findModel($id, $id_boda),
+                'providerMesaInvitado' => $providerMesaInvitado,
+            ]);
+        }else{
+            return $this->render('view', [
+                'model' => $this->findModel($id, $id_boda),
+                'providerMesaInvitado' => $providerMesaInvitado,
+            ]);
+        }
     }
 
     /**
@@ -82,11 +134,10 @@ class MesaController extends Controller
         $model = new Mesa();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id, 'id_boda' => $model->id_boda]);
+            return $this->redirect(['index']);
         } else {
             $id_boda = 1;
             $model->id_boda = $id_boda;
-            //$model->id = 1;
             if (sizeof(Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()) > 0){
                 $model->id = Mesa::find()->where(['id_boda' => $id_boda])->orderBy(['id' => SORT_DESC])->one()->id + 1;
             }else{
@@ -98,9 +149,15 @@ class MesaController extends Controller
             }else{
                 $model->numero = 1;
             }
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if (Yii::$app->request->isAjax){
+                return $this->renderAjax('create', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -121,11 +178,17 @@ class MesaController extends Controller
 
         $model->id_boda = 1;
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id, 'id_boda' => $model->id_boda]);
+            return $this->redirect(['index']);
         } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            if (Yii::$app->request->isAjax){
+                return $this->renderAjax('update', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -144,13 +207,13 @@ class MesaController extends Controller
     }
 
     /**
-    * Creates a new Mesa model by another data,
-    * so user don't need to input all field from scratch.
-    * If creation is successful, the browser will be redirected to the 'view' page.
-    *
-    * @param mixed $id
-    * @return mixed
-    */
+     * Creates a new Mesa model by another data,
+     * so user don't need to input all field from scratch.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     *
+     * @param mixed $id
+     * @return mixed
+     */
     public function actionSaveAsNew($id, $id_boda) {
         $model = new Mesa();
 
@@ -161,12 +224,18 @@ class MesaController extends Controller
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id, 'id_boda' => $model->id_boda]);
         } else {
-            return $this->render('saveAsNew', [
-                'model' => $model,
-            ]);
+            if (Yii::$app->request->isAjax){
+                return $this->renderAjax('saveAsNew', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('saveAsNew', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
-    
+
     /**
      * Finds the Mesa model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -183,15 +252,15 @@ class MesaController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
+
     /**
-    * Action to load a tabular form grid
-    * for MesaInvitado
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
+     * Action to load a tabular form grid
+     * for MesaInvitado
+     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+     *
+     * @return mixed
+     */
     public function actionAddMesaInvitado()
     {
         if (Yii::$app->request->isAjax) {

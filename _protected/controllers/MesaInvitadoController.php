@@ -77,7 +77,7 @@ class MesaInvitadoController extends Controller
         $model = new MesaInvitado();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/mesa/index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -100,7 +100,7 @@ class MesaInvitadoController extends Controller
         }
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/mesa/index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -118,7 +118,7 @@ class MesaInvitadoController extends Controller
     {
         $this->findModel($id)->deleteWithRelated();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['/mesa/index']);
     }
 
     /**

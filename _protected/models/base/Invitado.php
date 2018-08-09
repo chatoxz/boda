@@ -21,9 +21,9 @@ class Invitado extends \yii\db\ActiveRecord
 
 
     /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
+     * This function helps \mootensai\relation\RelationTrait runs faster
+     * @return array relation names of this model
+     */
     public function relationNames()
     {
         return [
@@ -65,7 +65,7 @@ class Invitado extends \yii\db\ActiveRecord
             'mensaje' => 'Mensaje',
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -73,4 +73,12 @@ class Invitado extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\Boda::className(), ['id' => 'id_boda']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMesaInvitado()
+    {
+        return $this->hasOne(\app\models\MesaInvitado::className(), ['id_invitado' => 'id']);
     }
+}

@@ -10,11 +10,11 @@ use kartik\grid\GridView;
 ?>
 <div class="mesa-view">
 
-    <div class="row">
+    <!--<div class="row">
         <div class="col-sm-9">
             <h2><?= Html::encode($model->id) ?></h2>
         </div>
-    </div>
+    </div>-->
 
     <div class="row">
 <?php 

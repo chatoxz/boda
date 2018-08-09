@@ -22,18 +22,19 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Mesa', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Advance Search', '#', ['class' => 'btn btn-info search-button']) ?>
+        <?= Html::a('Crear Mesa', ['create'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a('Invitados con Mesa', ['invitado_mesa', 'tipo' => 1], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Invitados sin Mesa', ['invitado_mesa', 'tipo' => 0], ['class' => 'btn btn-warning']) ?>
     </p>
-    <div class="search-form" style="display:none">
-        <?=  $this->render('_search', ['model' => $searchModel]); ?>
-    </div>
-    <?php 
+    <?php
     $gridColumn = [
-        ['class' => 'yii\grid\SerialColumn'],
+        [
+            'class' => 'yii\grid\SerialColumn',
+            'contentOptions' => ['style' => 'width: 20px;'],
+        ],
         [
             'class' => 'kartik\grid\ExpandRowColumn',
-            'width' => '50px',
+            'width' => '20px',
             'value' => function ($model, $key, $index, $column) {
                 return GridView::ROW_COLLAPSED;
             },
@@ -45,31 +46,46 @@ $this->registerJs($search);
         ],
         ['attribute' => 'id', 'visible' => false],
         [
-                'attribute' => 'id_boda',
-                'label' => 'Id Boda',
-                'visible' => false,
-                'value' => function($model){                   
-                    return $model->boda->id;                   
-                },
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Boda::find()->asArray()->all(), 'id', 'id'),
-                'filterWidgetOptions' => [
-                    'pluginOptions' => ['allowClear' => true],
-                ],
-                'filterInputOptions' => ['placeholder' => 'Boda', 'id' => 'grid-mesa-search-id_boda']
+            'attribute' => 'id_boda',
+            'label' => 'Id Boda',
+            'visible' => false,
+            'value' => function($model){
+                return $model->boda->id;
+            },
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => \yii\helpers\ArrayHelper::map(\app\models\Boda::find()->asArray()->all(), 'id', 'id'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
             ],
-        'nombre',
-        'numero',
+            'filterInputOptions' => ['placeholder' => 'Boda', 'id' => 'grid-mesa-search-id_boda']
+        ],
+        [
+            'attribute' => 'nombre',
+            'width' => '50px',
+        ],
+        [
+            'attribute' => 'numero',
+            'width' => '50px',
+        ],
+        [
+            'attribute' => 'cantidad',
+            'width' => '50px',
+            'label' => 'Cantidad',
+            'value' => function ($model, $key, $index, $column) {
+                return sizeof($model->mesaInvitados);
+            },
+        ],
         [
             'class' => 'yii\grid\ActionColumn',
-            'template' => '{save-as-new} {view} {update} {delete}',
+            'template' => '{view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
                     return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
                 },
             ],
         ],
-    ]; 
+
+    ];
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

@@ -10,6 +10,7 @@ use \app\models\base\Mesa as BaseMesa;
  */
 class Mesa extends BaseMesa
 {
+    public $cantidad;
     /**
      * @inheritdoc
      */
@@ -21,6 +22,10 @@ class Mesa extends BaseMesa
             [['id', 'id_boda', 'numero'], 'integer'],
             [['nombre'], 'string', 'max' => 45]
         ]);
+    }
+
+    public function getCantidad(){
+        return sizeof($this->mesaInvitados);
     }
 	
 }

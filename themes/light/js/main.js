@@ -146,7 +146,7 @@ $(document).on('pjax:success', function() {
 
 function setBtnModal(){
     $("a[title='Save As New']").each(function (index) {
-        $(this).attr().attr('value',$(this).attr('href')).addClass('modalButton');
+        $(this).attr('value',$(this).attr('href')).addClass('modalButton');
     });
     $("a[title=Ver]").each(function (index) {
         $(this).attr('value',$(this).attr('href')).addClass('modalButton');
