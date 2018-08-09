@@ -39,6 +39,9 @@ $this->title = 'Invitados sin mesa';
         [
             'attribute' => 'confirmacion',
             'width' => '20%',
+            'value' => function ($model){
+                return $model->getConfirmacion();
+            }
         ],
         [
             'attribute' => 'mesaInvitado.mesa.nombre',
