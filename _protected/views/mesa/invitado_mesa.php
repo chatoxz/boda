@@ -34,16 +34,21 @@ $this->title = 'Invitados sin mesa';
         ['attribute' => 'id', 'visible' => false],
         [
             'attribute' => 'nombre',
-            'width' => '40%',
+            'width' => '20%',
         ],
         [
             'attribute' => 'confirmacion',
-            'width' => '40%',
+            'width' => '20%',
+        ],
+        [
+            'attribute' => 'mesaInvitado.mesa.nombre',
+            'width' => '20%',
         ],
         [
             'attribute' => 'mesaInvitado.mesa.numero',
-            'width' => '40%',
+            'width' => '20%',
         ],
+
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{view} {update} {delete}',
