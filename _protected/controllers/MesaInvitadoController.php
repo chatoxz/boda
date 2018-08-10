@@ -2,12 +2,12 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\models\MesaInvitado;
 use app\models\MesaInvitadoSearch;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * MesaInvitadoController implements the CRUD actions for MesaInvitado model.
@@ -48,10 +48,17 @@ class MesaInvitadoController extends Controller
         $searchModel = new MesaInvitadoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        if(Yii::$app->request->isAjax) {
+            return $this->renderAjax('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }else{
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
     }
 
     /**
@@ -62,9 +69,15 @@ class MesaInvitadoController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        if(Yii::$app->request->isAjax){
+            return $this->renderAjax('view', [
+                'model' => $this->findModel($id),
+            ]);
+        }else{
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
+        }
     }
 
     /**
@@ -79,9 +92,15 @@ class MesaInvitadoController extends Controller
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['/mesa/index']);
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if(Yii::$app->request->isAjax){
+                return $this->renderAjax('create', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -102,9 +121,15 @@ class MesaInvitadoController extends Controller
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['/mesa/index']);
         } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            if(Yii::$app->request->isAjax){
+                return $this->renderAjax('update', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
 
@@ -122,29 +147,35 @@ class MesaInvitadoController extends Controller
     }
 
     /**
-    * Creates a new MesaInvitado model by another data,
-    * so user don't need to input all field from scratch.
-    * If creation is successful, the browser will be redirected to the 'view' page.
-    *
-    * @param mixed $id
-    * @return mixed
-    */
+     * Creates a new MesaInvitado model by another data,
+     * so user don't need to input all field from scratch.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     *
+     * @param mixed $id
+     * @return mixed
+     */
     public function actionSaveAsNew($id) {
         $model = new MesaInvitado();
 
         if (Yii::$app->request->post('_asnew') != '1') {
             $model = $this->findModel($id);
         }
-    
+
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('saveAsNew', [
-                'model' => $model,
-            ]);
+            if(Yii::$app->request->isAjax) {
+                return $this->renderAjax('saveAsNew', [
+                    'model' => $model,
+                ]);
+            }else{
+                return $this->render('saveAsNew', [
+                    'model' => $model,
+                ]);
+            }
         }
     }
-    
+
     /**
      * Finds the MesaInvitado model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

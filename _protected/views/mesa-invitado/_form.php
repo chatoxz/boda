@@ -18,16 +18,16 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
     <?= $form->field($model, 'id_mesa')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Mesa::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => 'Choose Mesa'],
+        'data' => \yii\helpers\ArrayHelper::map(\app\models\Mesa::find()->orderBy('id')->asArray()->all(), 'id', 'nombre'),
+        'options' => ['placeholder' => 'Mesa'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
     <?= $form->field($model, 'id_invitado')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Invitado::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => 'Choose Invitado'],
+        'data' => \yii\helpers\ArrayHelper::map(\app\models\Invitado::find()->orderBy('id')->asArray()->all(), 'id', 'nombre'),
+        'options' => ['placeholder' => 'Invitado'],
         'pluginOptions' => [
             'allowClear' => true
         ],
