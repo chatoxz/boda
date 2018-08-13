@@ -80,7 +80,7 @@ class MesaController extends Controller
             'id' => $searchModel->id,
             'invitado.id_boda' => 1,
         ]);
-        $query->andFilterWhere(['<=', 'invitado.confirmacion', 1]);
+        $query->andFilterWhere(['<=', 'invitado.id_confirmacion', 1]);
         $query->andFilterWhere(['invitado.id_boda' => $id_boda ]);
         if($tipo == 0){
             $query->andWhere(['mesa_invitado.id_mesa' => null]);

@@ -56,11 +56,17 @@ $this->registerJs($search);
             ],*/
         'nombre',
         [
-            'attribute' => 'confirmacion',
+            'attribute' => 'id_confirmacion',
             'label' => 'Confirmacion',
-            'value' => function ($model){
-                return $model->getConfirmacion();
-            }
+            'value' => function($model){
+                return $model->confirmacion->nombre;
+            },
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => \yii\helpers\ArrayHelper::map(\app\models\Confirmacion::find()->asArray()->all(), 'id', 'nombre'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+            ],
+            'filterInputOptions' => ['placeholder' => 'Confirmacion', 'id' => 'grid-invitado-search-id_confirmacion']
         ],
         //'confirmacion',
         'mensaje:ntext',

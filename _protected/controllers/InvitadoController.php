@@ -38,12 +38,12 @@ class InvitadoController extends Controller
         if($tipo_invitado == 3)
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         else{
-            $searchModel->confirmacion = $tipo_invitado;
+            $searchModel->id_confirmacion = $tipo_invitado;
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         }
-        $sin_confirmar = Invitado::find()->where(['confirmacion' => '0'])->count();
-        $confirmados = Invitado::find()->where(['confirmacion' => '1'])->count();
-        $no_iran = Invitado::find()->where(['confirmacion' => '2'])->count();
+        $sin_confirmar = Invitado::find()->where(['id_confirmacion' => '0'])->count();
+        $confirmados = Invitado::find()->where(['id_confirmacion' => '1'])->count();
+        $no_iran = Invitado::find()->where(['id_confirmacion' => '2'])->count();
         $todos = Invitado::find()->count();
 
         return $this->render('index', [

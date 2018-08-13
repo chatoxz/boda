@@ -11,6 +11,7 @@
 
 <div class="" style="text-align: center;font-family: textoIntermedioTitPpalFont;padding: 15px">
     <div class="titulo_2_black" style="padding-bottom: 0px;margin-bottom: 20px"> Podes depositarnos en esta cuenta</div>
+    <h2>Banco Santander Rio</h2>
     <div class="item_regalo">
         <img src="/themes/light/img/death_star.png" width="30" height="30">
         <span> N° de Cuenta </span>

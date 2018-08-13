@@ -37,11 +37,18 @@ $this->title = 'Invitados sin mesa';
             'width' => '20%',
         ],
         [
-            'attribute' => 'confirmacion',
+            'attribute' => 'id_confirmacion',
+            'label' => 'Confirmacion',
             'width' => '20%',
             'value' => function ($model){
-                return $model->getConfirmacion();
-            }
+                return $model->confirmacion->nombre;
+            },
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => \yii\helpers\ArrayHelper::map(\app\models\Confirmacion::find()->asArray()->all(), 'id', 'nombre'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+            ],
+            'filterInputOptions' => ['placeholder' => 'Boda', 'id' => 'grid-mesa-search-id_boda']
         ],
         [
             'attribute' => 'mesaInvitado.mesa.nombre',
@@ -51,7 +58,6 @@ $this->title = 'Invitados sin mesa';
             'attribute' => 'mesaInvitado.mesa.numero',
             'width' => '20%',
         ],
-
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{view} {update} {delete}',

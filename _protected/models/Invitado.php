@@ -24,10 +24,5 @@ class Invitado extends BaseInvitado
             ]);
     }
 
-    public function getConfirmacion(){
-        if($this->confirmacion == 0) return  'Sin Confirmar';
-        if($this->confirmacion == 1) return  'Confirmado';
-        if($this->confirmacion == 2) return  'No Asistira';
-    }
 
 }

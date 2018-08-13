@@ -58,7 +58,7 @@ use app\models\Invitado;
         $query->andFilterWhere([
             'id' => $this->id,
             'id_boda' => $this->id_boda,
-            'confirmacion' => $this->confirmacion,
+            'id_confirmacion' => $this->id_confirmacion,
         ]);
 
         $query->andFilterWhere(['like', 'nombre', $this->nombre])
