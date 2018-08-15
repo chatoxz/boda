@@ -48,12 +48,31 @@ class MesaController extends Controller
      */
     public function actionIndex()
     {
+        $id_boda = 1;
         $searchModel = new MesaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $cant_sin_mesa =  Invitado::find()->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' )
+            ->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa')
+            ->andFilterWhere([ 'id' => $searchModel->id, 'invitado.id_boda' => $id_boda, ])
+            ->andFilterWhere(['<=', 'invitado.id_confirmacion', 1])
+            ->andFilterWhere(['invitado.id_boda' => $id_boda ])
+            ->andWhere(['mesa_invitado.id_mesa' => null])
+            ->count();
+
+        $cant_con_mesa =  Invitado::find()->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' )
+            ->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa')
+            ->andFilterWhere([ 'id' => $searchModel->id, 'invitado.id_boda' => $id_boda, ])
+            ->andFilterWhere(['<=', 'invitado.id_confirmacion', 1])
+            ->andFilterWhere(['invitado.id_boda' => $id_boda ])
+            ->andWhere(['not', ['mesa_invitado.id_mesa' => null]])
+            ->count();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'cant_sin_mesa' => $cant_sin_mesa,
+            'cant_con_mesa' => $cant_con_mesa,
         ]);
     }
 
@@ -76,10 +95,7 @@ class MesaController extends Controller
 
         $query->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' );
         $query->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa');
-        $query->andFilterWhere([
-            'id' => $searchModel->id,
-            'invitado.id_boda' => 1,
-        ]);
+        $query->andFilterWhere(['id' => $searchModel->id,'invitado.id_boda' => $id_boda,]);
         $query->andFilterWhere(['<=', 'invitado.id_confirmacion', 1]);
         $query->andFilterWhere(['invitado.id_boda' => $id_boda ]);
         if($tipo == 0){
@@ -92,10 +108,28 @@ class MesaController extends Controller
             $query->orderBy(['id_mesa' => SORT_ASC]);
         }
 
+        $cant_sin_mesa =  Invitado::find()->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' )
+            ->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa')
+            ->andFilterWhere([ 'id' => $searchModel->id, 'invitado.id_boda' => $id_boda, ])
+            ->andFilterWhere(['<=', 'invitado.id_confirmacion', 1])
+            ->andFilterWhere(['invitado.id_boda' => $id_boda ])
+            ->andWhere(['mesa_invitado.id_mesa' => null])
+            ->count();
+
+        $cant_con_mesa =  Invitado::find()->leftJoin('mesa_invitado','invitado.id = mesa_invitado.id_invitado' )
+            ->leftJoin('mesa','mesa.id = mesa_invitado.id_mesa')
+            ->andFilterWhere([ 'id' => $searchModel->id, 'invitado.id_boda' => $id_boda, ])
+            ->andFilterWhere(['<=', 'invitado.id_confirmacion', 1])
+            ->andFilterWhere(['invitado.id_boda' => $id_boda ])
+            ->andWhere(['not', ['mesa_invitado.id_mesa' => null]])
+            ->count();
+
         return $this->render('invitado_mesa', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'titulo' => $titulo,
+            'cant_sin_mesa' => $cant_sin_mesa,
+            'cant_con_mesa' => $cant_con_mesa,
         ]);
     }
 

@@ -18,23 +18,23 @@ $this->registerJs($search);
 ?>
 <div class="mesa-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title)." Cantidad: ".$dataProvider->count ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Crear Mesa', ['create'], ['class' => 'btn btn-info']) ?>
-        <?= Html::a('Invitados con Mesa', ['invitado_mesa', 'tipo' => 1], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Invitados sin Mesa', ['invitado_mesa', 'tipo' => 0], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Invitados con Mesa ('.$cant_con_mesa.')', ['invitado_mesa', 'tipo' => 1], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Invitados sin Mesa ('.$cant_sin_mesa.')', ['invitado_mesa', 'tipo' => 0], ['class' => 'btn btn-warning']) ?>
     </p>
     <?php
     $gridColumn = [
-        [
+       /* [
             'class' => 'yii\grid\SerialColumn',
             'contentOptions' => ['style' => 'width: 20px;'],
-        ],
+        ],*/
         [
             'class' => 'kartik\grid\ExpandRowColumn',
-            'width' => '20px',
+            'width' => '10px',
             'value' => function ($model, $key, $index, $column) {
                 return GridView::ROW_COLLAPSED;
             },
@@ -92,6 +92,7 @@ $this->registerJs($search);
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
+        'defaultPagination' => 'all',
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-mesa']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
@@ -117,6 +118,7 @@ $this->registerJs($search);
                     ExportMenu::FORMAT_PDF => false
                 ]
             ]) ,
+            '{toggleData}',
         ],
     ]); ?>
 

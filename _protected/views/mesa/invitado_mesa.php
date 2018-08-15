@@ -21,8 +21,8 @@ $this->title = 'Invitados sin mesa';
     <p>
         <?= Html::a('Listado Mesas', ['mesa/index'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Crear Mesa', ['create'], ['class' => 'btn btn-info']) ?>
-        <?= Html::a('Invitados con Mesa', ['invitado_mesa', 'tipo' => 1], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Invitados sin Mesa', ['invitado_mesa', 'tipo' => 0], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Invitados con Mesa ('.$cant_con_mesa.')', ['invitado_mesa', 'tipo' => 1], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Invitados sin Mesa ('.$cant_sin_mesa.')', ['invitado_mesa', 'tipo' => 0], ['class' => 'btn btn-warning']) ?>
     </p>
 
     <?php
@@ -69,13 +69,14 @@ $this->title = 'Invitados sin mesa';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
+        'defaultPagination' => 'all',
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-mesa']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
         ],
-        'export' => false,
+        'export' => ['{toggleData}'],
         // your toolbar can include the additional full export menu
     ]); ?>
 
