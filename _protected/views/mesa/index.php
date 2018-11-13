@@ -92,7 +92,7 @@ $this->registerJs($search);
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
-        'defaultPagination' => 'all',
+        //'defaultPagination' => 'all',
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-mesa']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,

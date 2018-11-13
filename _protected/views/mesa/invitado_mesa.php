@@ -69,7 +69,7 @@ $this->title = 'Invitados sin mesa';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
-        'defaultPagination' => 'all',
+        //'defaultPagination' => 'all',
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-mesa']],
         'panel' => [

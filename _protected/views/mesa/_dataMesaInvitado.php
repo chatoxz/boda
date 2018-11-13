@@ -17,15 +17,12 @@ $gridColumns = [
         'headerOptions' => ['style' => 'width: 40%'],
     ],
     [
-        'attribute' => 'invitado.comfirmacion',
+        'attribute' => 'invitado.id_confirmacion',
         'label' => 'Confirmacion',
         'headerOptions' => ['style' => 'width: 40%'],
-        'value' => function ($model, $key, $index, $column)
-        {
-            if ($model->invitado->confirmacion == '0') return 'Sin confirmar';
-            if ($model->invitado->confirmacion == '1') return 'Confirmado';
-            if ($model->invitado->confirmacion == '2') return 'No asistira';
-        },
+        'value' => function($model){
+            return $model->invitado->confirmacion->nombre;
+        }
     ],
     [
         'class' => 'yii\grid\ActionColumn',

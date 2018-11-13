@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\InvitadoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model app\models\Invitado */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -67,6 +68,18 @@ $this->registerJs($search);
                 'pluginOptions' => ['allowClear' => true],
             ],
             'filterInputOptions' => ['placeholder' => 'Confirmacion', 'id' => 'grid-invitado-search-id_confirmacion']
+        ],
+        [
+            'attribute' => 'mesaInvitado.id_mesa',
+            'width' => '50px',
+            'label' => 'Mesa',
+            'value' => function ($model) {
+                if($model->mesaInvitado){
+                    return $model->mesaInvitado->mesa->nombre;
+                }else{
+                    return '';
+                }
+            },
         ],
         //'confirmacion',
         'mensaje:ntext',
