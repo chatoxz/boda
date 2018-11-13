@@ -48,5 +48,6 @@ phpunit.phar
 /node_modules
 .env
 
+assets/
 _protected/runtime/
 composer.lock
