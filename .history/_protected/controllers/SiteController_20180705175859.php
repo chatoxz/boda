@@ -76,9 +76,9 @@ class SiteController extends Controller
         ];
     }
 
-    //------------------------------------------------------------------------------------------------//
-    // STATIC PAGES
-    //------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
+// STATIC PAGES
+//------------------------------------------------------------------------------------------------//
 
     /**
      * Displays the index (home) page.
@@ -89,18 +89,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
-    }
-
-
-    /**
-     * Displays the index (home) page.
-     * Use it in case your home page contains static content.
-     *
-     * @return string
-     */
-    public function actionChatoylou()
-    {
-        return $this->render('chatoylou');
     }
 
 
@@ -152,20 +140,20 @@ class SiteController extends Controller
     {
         return $this->redirect('index');
     }
-    /**
-         * Displays the about static page.
-         *
-         * @return string
-         */
+/**
+     * Displays the about static page.
+     *
+     * @return string
+     */
     public function actionPagoProceso()
     {
         return $this->redirect('index');
     }
-    /**
-         * Displays the about static page.
-         *
-         * @return string
-         */
+/**
+     * Displays the about static page.
+     *
+     * @return string
+     */
     public function actionAbout()
     {
         return $this->render('about');
@@ -189,17 +177,15 @@ class SiteController extends Controller
             return $this->refresh();
         }
 
-        Yii::$app->session->setFlash('success', Yii::t(
-            'app',
-            'Thank you for contacting us. We will respond to you as soon as possible.'
-        ));
+        Yii::$app->session->setFlash('success', Yii::t('app',
+            'Thank you for contacting us. We will respond to you as soon as possible.'));
 
         return $this->refresh();
     }
 
-    //------------------------------------------------------------------------------------------------//
-    // LOG IN / LOG OUT / PASSWORD RESET
-    //------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
+// LOG IN / LOG OUT / PASSWORD RESET
+//------------------------------------------------------------------------------------------------//
 
     /**
      * Logs in the user if his account is activated,
@@ -230,10 +216,8 @@ class SiteController extends Controller
 
         // if user's account is not activated, he will have to activate it first
         if ($model->status === User::STATUS_INACTIVE && $successfulLogin === false) {
-            Yii::$app->session->setFlash('error', Yii::t(
-                'app',
-                'You have to activate your account first. Please check your email.'
-            ));
+            Yii::$app->session->setFlash('error', Yii::t('app',
+                'You have to activate your account first. Please check your email.'));
             return $this->refresh();
         }
 
@@ -276,10 +260,8 @@ class SiteController extends Controller
         }
 
         if (!$model->sendEmail()) {
-            Yii::$app->session->setFlash('error', Yii::t(
-                'app',
-                'Sorry, we are unable to reset password for email provided.'
-            ));
+            Yii::$app->session->setFlash('error', Yii::t('app',
+                'Sorry, we are unable to reset password for email provided.'));
             return $this->refresh();
         }
 
@@ -313,9 +295,9 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    //------------------------------------------------------------------------------------------------//
-    // SIGN UP / ACCOUNT ACTIVATION
-    //------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
+// SIGN UP / ACCOUNT ACTIVATION
+//------------------------------------------------------------------------------------------------//
 
     /**
      * Signs up the user.
@@ -379,10 +361,8 @@ class SiteController extends Controller
         // sending email has failed
         if (!$model->sendAccountActivationEmail($user)) {
             // display error message to user
-            Yii::$app->session->setFlash('error', Yii::t(
-                'app',
-                'We couldn\'t send you account activation email, please contact us.'
-            ));
+            Yii::$app->session->setFlash('error', Yii::t('app',
+                'We couldn\'t send you account activation email, please contact us.'));
 
             // log this error, so we can debug possible problem easier.
             Yii::error('Signup failed! User '.Html::encode($user->username).' could not sign up. 
@@ -416,10 +396,8 @@ class SiteController extends Controller
         }
 
         if (!$user->activateAccount()) {
-            Yii::$app->session->setFlash('error', Html::encode($user->username). Yii::t(
-                'app',
-                    ' your account could not be activated, please contact us!'
-            ));
+            Yii::$app->session->setFlash('error', Html::encode($user->username). Yii::t('app',
+                    ' your account could not be activated, please contact us!'));
             return $this->goHome();
         }
 

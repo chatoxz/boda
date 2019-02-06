@@ -5,6 +5,7 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
+<!--<link rel="stylesheet" href="/themes/light/css/animations.css" type="text/css">-->
 
 <div class="site-index">
     <!--
@@ -17,7 +18,7 @@ $this->title = Yii::t('app', Yii::$app->name);
             <div class="titulo_principal slowest  animated bounceInDown" data-target='clickExample'>
                 <span style="margin-bottom: -10px"> <img class="first_img" src="/themes/light/img/chato.png" width="100%"
                         alt=""> </span>
-                <span class="texto_intermedio_tit_ppal">NOS CASAMOS </span>
+                <span class="texto_intermedio_tit_ppal">NOS </span>
                 <span style="margin-top: -28px"><img class="first_img" src="/themes/light/img/lou.png" width="100%" alt=""></span>
             </div>
             <p class="titulo_1 slowest  animated bounceInDown">

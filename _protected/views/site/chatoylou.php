@@ -5,6 +5,7 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
+<!--<link rel="stylesheet" href="/themes/light/css/animations.css" type="text/css">-->
 
 <div class="site-index">
     <!--

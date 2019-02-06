@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => Yii::t('Are you sure you want to delete this item?'),
+                    'confirm' => 'Are you sure you want to delete this item?',
                     'method' => 'post',
                 ],
             ])
@@ -52,8 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     <!--<div class="row">
-        <h4>Boda 
-        <?php// echo ' '. Html::encode($this->title) ?>
+        <h4>Boda <?php// echo ' '. Html::encode($this->title) ?>
     </h4>
 </div>-->
 <?php

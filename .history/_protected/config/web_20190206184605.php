@@ -126,7 +126,7 @@ $config = [
                 'yii' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => 'translations',
-                    'sourceLanguage' => 'en'
+                    'sourceLanguage' => 'en',
                 ],
             ],
         ],

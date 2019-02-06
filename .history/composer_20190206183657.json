@@ -13,8 +13,10 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-password": "@dev",
-        "mootensai/yii2-enhanced-gii": "dev-master"
+        "johnitvn/yii2-ajaxcrud": "*",
+        "mootensai/yii2-enhanced-gii": "dev-master",
     },
     "require-dev": {
         "codeception/codeception": "*",

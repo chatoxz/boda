@@ -15,8 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= 'Mesa'.' '. Html::encode($this->title) ?>
-            </h2>
+            <h2><?= 'Mesa'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
             <?= Html::a('Save As New', ['save-as-new', 'id' => $model->id, 'id_boda' => $model->id_boda], ['class' => 'btn btn-info']) ?>
@@ -24,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('Delete', ['delete', 'id' => $model->id, 'id_boda' => $model->id_boda], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => Yii::t('Are you sure you want to delete this item?'),,
+                    'confirm' => '¿Está seguro de eliminar este elemento?',
                     'method' => 'post',
                 ],
             ])
@@ -63,8 +62,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
 
         <?php
-        if ($providerMesaInvitado->totalCount) {
-            $gridColumnMesaInvitado = [
+        if($providerMesaInvitado->totalCount){
+        $gridColumnMesaInvitado = [
             ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
             [
@@ -72,7 +71,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Nombres',
                 'width' => '90%'
             ],
-        ]; ?>
+        ];
+        ?>
         <div class="col-md-8 col-sm-12">
             <?=   Gridview::widget([
                 'dataProvider' => $providerMesaInvitado,
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'export' => false,
                 'columns' => $gridColumnMesaInvitado
             ]);
-        }
+            }
             ?>
         </div>
     </div>

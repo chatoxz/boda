@@ -16,8 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'Invitado'.' '. Html::encode($this->title) ?>
-            </h2>
+            <h2><?= 'Invitado'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             <?php $url = Url::toRoute(['update', 'id' => $model->id]); ?>
@@ -25,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => Yii::t('Are you sure you want to delete this item?'),
+                    'confirm' => 'Are you sure you want to delete this item?',
                     'method' => 'post',
                 ],
             ])
@@ -34,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row">
-        <?php
+<?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
@@ -52,11 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     <!--<div class="row">
-        <h4>Boda 
-        <?php// echo ' '. Html::encode($this->title) ?>
-    </h4>
-</div>-->
-<?php
+        <h4>Boda<?php// echo ' '. Html::encode($this->title) ?></h4>
+    </div>-->
+    <?php 
     /*$gridColumnBoda = [
         ['attribute' => 'id', 'visible' => false],
         'id_novio',

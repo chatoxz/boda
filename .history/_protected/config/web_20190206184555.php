@@ -120,13 +120,13 @@ $config = [
             'translations' => [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => 'translations',
+                    'basePath' => '@app/translations',
                     'sourceLanguage' => 'en',
                 ],
                 'yii' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => 'translations',
-                    'sourceLanguage' => 'en'
+                    'basePath' => '@app/translations',
+                    'sourceLanguage' => 'en',
                 ],
             ],
         ],

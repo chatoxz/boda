@@ -98,7 +98,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionChatoylou()
+    public function actionIndex2()
     {
         return $this->render('chatoylou');
     }

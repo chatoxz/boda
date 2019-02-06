@@ -15,21 +15,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-md-6  col-sm-8">
-            <h2>
-                <?= Yii::t('app', 'Confirmacion').' '. Html::encode($this->title) ?>
-            </h2>
+            <h2><?= Yii::t('app', 'Confirmacion').' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-md-5 col-sm-4" style="margin: 15px">
-            <?= Html::a(
-    Yii::t('app', 'Save As New'),
-    ['save-as-new', 'id' => $model->id],
-['class' => 'btn btn-info add-modal-data', 'title' => Yii::t('app', 'Save As New'), 'style' => 'margin-bottom:15px' ]
-) ?>
-            <?= Html::a(
-    Yii::t('app', 'Update'),
-    ['update', 'id' => $model->id],
-            ['class' => 'btn btn-primary add-modal-data', 'title' => Yii::t('app', 'Update'), 'style' => 'margin-bottom:15px']
-) ?>
+            <?= Html::a(Yii::t('app', 'Save As New'), ['save-as-new', 'id' => $model->id], 
+['class' => 'btn btn-info add-modal-data', 'title' => Yii::t('app', 'Save As New'), 'style' => 'margin-bottom:15px' ]) ?>            
+            <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], 
+            ['class' => 'btn btn-primary add-modal-data', 'title' => Yii::t('app', 'Update'), 'style' => 'margin-bottom:15px']) ?>
             <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'style' => 'margin-bottom:15px',
@@ -43,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row">
-        <?php
+<?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'nombre',
@@ -55,10 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
-
+    
     <div class="row">
-        <?php
-if ($providerInvitado->totalCount) {
+<?php
+if($providerInvitado->totalCount){
     $gridColumnInvitado = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],

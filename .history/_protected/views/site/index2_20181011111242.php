@@ -5,6 +5,7 @@ use yii\helpers\Url;
 
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
+<link rel="stylesheet" href="/themes/light/css/animations.css" type="text/css">
 
 <div class="site-index">
     <!--
@@ -12,20 +13,18 @@ $this->title = Yii::t('app', Yii::$app->name);
         <img  class="first_img" src="/themes/light/img/chato_lou2.jpg" width="100%" alt="">
     </div>
     -->
-    <div class="container">
+    <div class="container" >
         <div class="col-xs-12 col-sm-12 col-md-12 animatedParent">
-            <div class="titulo_principal slowest  animated bounceInDown" data-target='clickExample'>
-                <span style="margin-bottom: -10px"> <img class="first_img" src="/themes/light/img/chato.png" width="100%"
-                        alt=""> </span>
+            <div class="titulo_principal slowest  animated bounceInDown" data-target='clickExample' >
+                <span style="margin-bottom: -10px"> <img  class="first_img" src="/themes/light/img/chato.png" width="100%" alt=""> </span>
                 <span class="texto_intermedio_tit_ppal">NOS CASAMOS </span>
-                <span style="margin-top: -28px"><img class="first_img" src="/themes/light/img/lou.png" width="100%" alt=""></span>
+                <span style="margin-top: -28px"><img  class="first_img" src="/themes/light/img/lou.png" width="100%" alt=""></span>
             </div>
-            <p class="titulo_1 slowest  animated bounceInDown">
+            <p class="titulo_1 slowest  animated bounceInDown" >
                 Capitulo x
             </p>
-            <p class="texto_1 slowest  animated bounceInDown">
-                Wedding! El lado oscuro y los rebeldes se quieren dar vuelta como media en el casorio de la Lou y el
-                Chato.
+            <p class="texto_1 slowest  animated bounceInDown" >
+                Wedding!  El lado oscuro y los rebeldes se quieren dar vuelta como media en el casorio de la Lou y el Chato.
             </p>
         </div>
     </div>
@@ -65,8 +64,7 @@ $this->title = Yii::t('app', Yii::$app->name);
             <img src="/themes/light/img/new_order_jedi.png" alt="" width="150">
             <div class="titulo_1">Ceremonia Religiosa</div>
             <p class="texto_1">
-                En la iglesia Nuestro Señor del Milagro y San Marón, la Ceremonia se realizara. A las 11:00 hs, el
-                Sabado 18 de agosto debes estar.
+                En la iglesia Nuestro Señor del Milagro y San Marón, la Ceremonia se realizara. A las 11:00 hs, el Sabado 18 de agosto debes estar.
             </p>
             <a class="btn btn-default btn-como-llegar" href="https://goo.gl/maps/GLTXvvak7N72" target="_blank">
                 <span class="glyphicon glyphicon-map-marker"></span>
@@ -112,20 +110,17 @@ $this->title = Yii::t('app', Yii::$app->name);
                             <div class="titulo_1_black">Iglesia</div>
                             <div class="wrap_fotos_padrinx">
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/elvi2.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/elvi2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Elvira</div>
                                     <div class="texto_1_black texto_padrinx">Mamá</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/victor2.jpg"
-                                            width="180" alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/victor2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Victor</div>
                                     <div class="texto_1_black texto_padrinx">Papá</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/vides.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/vides.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Vides</div>
                                     <div class="texto_1_black texto_padrinx">amiga</div>
                                 </div>
@@ -135,26 +130,22 @@ $this->title = Yii::t('app', Yii::$app->name);
                             <div class="titulo_1_black">Civil</div>
                             <div class="wrap_fotos_padrinx">
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/luz3.jpg" width="180"
-                                            alt=""></div>
-                                    <div class="texto_1_black texto_padrinx ">Luli </div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/luz3.jpg" width="180" alt=""></div>
+                                    <div class="texto_1_black texto_padrinx " >Luli </div>
                                     <div class="texto_1_black texto_padrinx">Amiga</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/aldana.jpg"
-                                            width="180" alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/aldana.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Aldu</div>
                                     <div class="texto_1_black texto_padrinx">Amiga</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/maru2.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/maru2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Maru</div>
                                     <div class="texto_1_black texto_padrinx">Amiga</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/pili2.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/pili2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Pili</div>
                                     <div class="texto_1_black texto_padrinx">Amiga</div>
                                 </div>
@@ -172,20 +163,17 @@ $this->title = Yii::t('app', Yii::$app->name);
                             <div class="titulo_1_black">Iglesia</div>
                             <div class="wrap_fotos_padrinx">
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/dora2.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/dora2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Dora</div>
                                     <div class="texto_1_black texto_padrinx">Mamá</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/robert2.jpg"
-                                            width="180" alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/robert2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Roberto</div>
                                     <div class="texto_1_black texto_padrinx">Tio</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/charly2.jpg"
-                                            width="180" alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/charly2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Charly</div>
                                     <div class="texto_1_black texto_padrinx">Amigo</div>
                                 </div>
@@ -195,26 +183,22 @@ $this->title = Yii::t('app', Yii::$app->name);
                             <div class="titulo_1_black">Civil</div>
                             <div class="wrap_fotos_padrinx">
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/jose3.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/jose3.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Josefina</div>
                                     <div class="texto_1_black texto_padrinx">Hermana</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/mili3.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/mili3.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Milagro</div>
                                     <div class="texto_1_black texto_padrinx">Hermana</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/emi2.jpg" width="180"
-                                            alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/emi2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Emiliano</div>
                                     <div class="texto_1_black texto_padrinx">Primo</div>
                                 </div>
                                 <div class="detalle_foto_padrinx">
-                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/marcelo2.jpg"
-                                            width="180" alt=""></div>
+                                    <div class="div_foto_padrinx"><img src="/themes/light/img/padrinxs/marcelo2.jpg" width="180" alt=""></div>
                                     <div class="texto_1_black texto_padrinx">Marcelo</div>
                                     <div class="texto_1_black texto_padrinx">Amigo</div>
                                 </div>
@@ -252,3 +236,4 @@ $this->title = Yii::t('app', Yii::$app->name);
         </div>
     </div>
 </div>
+

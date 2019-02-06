@@ -15,16 +15,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= 'Mesa Invitado'.' '. Html::encode($this->title) ?>
-            </h2>
+            <h2><?= 'Mesa Invitado'.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
-            <?= Html::a('Save As New', ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>
+            <?= Html::a('Save As New', ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a('Delete', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => Yii::t('Are you sure you want to delete this item?'),,
+                    'confirm' => '¿Está seguro de eliminar este elemento?',
                     'method' => 'post',
                 ],
             ])
@@ -33,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row">
-        <?php
+<?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
@@ -52,10 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
     </div>
     <div class="row">
-        <h4>Invitado<?= ' '. Html::encode($this->title) ?>
-        </h4>
+        <h4>Invitado<?= ' '. Html::encode($this->title) ?></h4>
     </div>
-    <?php
+    <?php 
     $gridColumnInvitado = [
         ['attribute' => 'id', 'visible' => false],
         'id_boda',
@@ -68,10 +66,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => $gridColumnInvitado    ]);
     ?>
     <div class="row">
-        <h4>Mesa<?= ' '. Html::encode($this->title) ?>
-        </h4>
+        <h4>Mesa<?= ' '. Html::encode($this->title) ?></h4>
     </div>
-    <?php
+    <?php 
     $gridColumnMesa = [
         ['attribute' => 'id', 'visible' => false],
         'id_boda',
