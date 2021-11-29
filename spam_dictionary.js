@@ -24,7 +24,5 @@ var spam_dictionary = [
 
     //ICIM
     'ddlg',
-    //TESTING
-    'Holis',
-    '66',
+
 ];
