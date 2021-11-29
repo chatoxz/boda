@@ -26,4 +26,5 @@ var spam_dictionary = [
     'ddlg',
     //TESTING
     'Holis',
+    '66',
 ];
