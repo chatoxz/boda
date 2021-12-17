@@ -23,6 +23,6 @@ var spam_dictionary = [
     ' ana ',' mia ', ' Thinspo','Bonespo','Meanspo ','CW','GW','UGW',' bone','hookup',
 
     //ICIM
-    'ddlg',
+    'ddlg','thank',
 
 ];
